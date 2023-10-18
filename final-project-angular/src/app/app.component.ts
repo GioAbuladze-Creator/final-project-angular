@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { TopBarComponent } from './core/top-bar/top-bar.component';
-import { HttpClientModule } from '@angular/common/http';
-import { ApiService } from './shared/services/api.service';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +8,6 @@ import { ApiService } from './shared/services/api.service';
   imports: [
     CommonModule,
     RouterOutlet,
-    TopBarComponent,
     
   ],
   templateUrl: './app.component.html',

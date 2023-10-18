@@ -7,12 +7,14 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon'
 import { ApiService } from 'src/app/shared/services/api.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-top-bar',
   standalone: true,
   imports: [
     CommonModule,
+    RouterModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatSelectModule,

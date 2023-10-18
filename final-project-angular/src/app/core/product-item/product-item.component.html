@@ -1,0 +1,17 @@
+<div class="product-list">
+    <div class="product" *ngFor="let product of products" [routerLink]="['product',product.id]">
+        <div class="product-image">
+            <img [src]="product.images[0]" />
+        </div>
+        <div class="product-info">
+            <h3>{{ product.title }}</h3>
+            <p class="sale" *ngIf="discount">{{ product.discountPercentage | sale}} off</p>
+            <p><b>{{ product.price | currency }}</b> <span *ngIf="discount"> List Price:<span class="old-price">
+                {{oldPrice(product.price,product.discountPercentage)|currency}}</span></span></p>
+            <p class="desc">{{ product.description }}</p>
+        </div>
+        <div class="product-buttons">
+            <button mat-raised-button (click)="addToCart(product)">Add to Cart</button>
+        </div>
+    </div>
+</div>

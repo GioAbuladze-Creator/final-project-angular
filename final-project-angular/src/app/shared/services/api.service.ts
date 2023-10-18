@@ -15,7 +15,9 @@ export class ApiService {
     return 'https://dummyjson.com/products';
   }
   fetchProducts() {
-    return this.http.get<Response>(`${this.url}?limit=0`);
+    return this.http.get<Response>(`${this.url}?limit=0`).pipe(
+      map(data => data.products)
+    );
   }
   fetchProduct(id: string) {
     return this.http.get<Product>(`${this.url}/${id}`);
@@ -25,7 +27,7 @@ export class ApiService {
   }
   fetchProdOfCat(category: string) {
     return this.http.get<Response>(`${this.url}/category/${category}`).pipe(
-      map(data=>data.products)
+      map(data => data.products)
     );
   }
   searchProducts(query: string, category?: string) {

@@ -1,0 +1,57 @@
+@import '../../shared/styles/palette';
+@import '../../shared/styles/shared';
+
+.product-list{
+    width: 80%;
+    min-width:400px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    gap:20px;
+
+    .product{
+        width: 300px;
+        height: 450px;
+        text-align: center;
+        box-shadow: $box-shadow;      
+        padding: 10px 0;
+        border-radius: 5px;
+        position: relative;
+        cursor: pointer;
+        img{
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+        .desc{
+            width: 90%;
+            text-align: center;
+            margin:0 auto;
+            height:60px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+
+        }
+        .sale{
+            background-color: $sale-background;
+            color:$white;
+            width: 100%;
+            height: 30px;
+            font-size: 25px;
+            line-height: 30px;
+        }
+        .old-price{
+            text-decoration: line-through;
+        }
+        button{
+            position:absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}
