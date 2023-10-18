@@ -1,1 +1,25 @@
-<p>single-product works!</p>
+<app-top-bar></app-top-bar>
+<div class="product" *ngIf="product">
+    <div class="images">
+        <img [src]="product.images[0]" alt="product_image">
+        <div>
+            <img *ngFor="let image of product.images" [src]="image" alt="product_image">
+        </div>
+    </div>
+    <div class="description">
+        <h2>{{product.title}}</h2>
+        <p class="brand">{{product.brand}}</p>
+        <div class="rating">
+            {{product.rating}}
+            <span  *ngFor="let star of stars | keyvalue">
+                <mat-icon *ngIf="star.value=='star'; else elseBlock" class="star">star</mat-icon>
+                <ng-template #elseBlock>
+                    <mat-icon class="border">star</mat-icon>
+                </ng-template>
+            </span>
+        </div>
+        <mat-divider></mat-divider>
+        <p class="price">{{product.price|currency}}</p>
+    </div>
+    
+</div>

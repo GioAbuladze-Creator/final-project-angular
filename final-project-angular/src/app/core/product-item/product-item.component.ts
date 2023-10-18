@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Product } from 'src/app/shared/interfaces/product';
 import { MatButtonModule } from '@angular/material/button';
-import { SalePipe } from 'src/app/shared/pipes/sale.pipe';
 import { RouterLink } from '@angular/router';
+
+import { Product } from 'src/app/shared/interfaces/product';
+import { SalePipe } from 'src/app/shared/pipes/sale.pipe';
 
 @Component({
   selector: 'app-product-item',

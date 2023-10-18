@@ -1,0 +1,11 @@
+@import '../../shared/styles/palette';
+
+.rating {
+
+    .star {
+        color: $star-color;
+    }
+    .border {
+        color: $star-border-color;
+    }
+}
