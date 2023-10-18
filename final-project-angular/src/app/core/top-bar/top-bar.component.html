@@ -1,0 +1,17 @@
+<section>
+    <img src="../../../assets/ubnisi_logo.png" alt="ubnisi_logo">
+    <div class="search-bar" [formGroup]="searchForm">
+        <input type="text" placeholder="Search Ubisi" class="search" formControlName="search">
+        <select name="category" formControlName="category" class="category">
+            <option value="">All Categories</option>
+            <option [value]="category" *ngFor="let category of categories">{{category}}</option>
+        </select>
+        <button mat-icon-button (click)="onSearch()">
+            <mat-icon>search</mat-icon>
+        </button>
+    </div>
+    <div class="user-options">
+        <mat-icon aria-hidden="false" aria-label="cart icon" fontIcon="shopping_cart"></mat-icon>
+        <mat-icon aria-hidden="false" aria-label="person icon" fontIcon="account_circle"></mat-icon>
+    </div>
+</section>
