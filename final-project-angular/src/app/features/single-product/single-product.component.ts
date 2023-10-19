@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { MatDividerModule } from '@angular/material/divider';
@@ -7,17 +7,20 @@ import { MatIconModule } from '@angular/material/icon';
 import { TopBarComponent } from 'src/app/core/top-bar/top-bar.component';
 import { Product } from 'src/app/shared/interfaces/product';
 import { ApiService } from 'src/app/shared/services/api.service';
+import { SalePipe } from 'src/app/shared/pipes/sale.pipe';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-single-product',
   standalone: true,
   imports: [
     CommonModule,
-
+    SalePipe,
     RouterLink,
     TopBarComponent,
     MatDividerModule,
     MatIconModule,
+    MatButtonModule,
   ],
   templateUrl: './single-product.component.html',
   styleUrls: ['./single-product.component.scss']
@@ -50,6 +53,7 @@ export class SingleProductComponent implements OnInit {
       this.mainImage = this.product.images[0];
 
     })
+    console.log(this.product)
   }
   
 }
