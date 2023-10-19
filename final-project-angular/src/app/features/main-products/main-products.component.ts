@@ -45,6 +45,8 @@ export class MainProductsComponent implements OnInit {
       }
       if (discount && discount.valueOf() == 'true') {
         this.discount = true;
+      }else{
+        this.discount = false;
       }
     });
   }
