@@ -1,10 +1,12 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+
 import { TopBarComponent } from 'src/app/core/top-bar/top-bar.component';
 import { ProductItemComponent } from 'src/app/core/product-item/product-item.component';
 import { Product } from 'src/app/shared/interfaces/product';
 import { ApiService } from 'src/app/shared/services/api.service';
-import { ActivatedRoute } from '@angular/router';
 import { CategoryBarComponent } from 'src/app/core/category-bar/category-bar.component';
 
 @Component({
@@ -21,7 +23,7 @@ import { CategoryBarComponent } from 'src/app/core/category-bar/category-bar.com
   styleUrls: ['./main-products.component.scss']
 })
 export class MainProductsComponent implements OnInit, OnDestroy {
-  products: Product[] = [];
+  products$: Observable<Product[]> = new Observable<Product[]>();
   discount = false;
   constructor(
     private apiService: ApiService,
@@ -33,41 +35,29 @@ export class MainProductsComponent implements OnInit, OnDestroy {
       const category = params['category'];
       const search = params['search'];
       const discount = params['discount'];
-      
+
       if (category && search) {
-        this.apiService.searchProducts(search, category).subscribe(products => {
-          this.products = products;
-        });
+        this.products$ = this.apiService.searchProducts(search, category)
       } else if (category) {
-        this.apiService.fetchProdOfCat(category).subscribe(products => {
-          this.products = products;
-        });
+        this.products$ = this.apiService.fetchProdOfCat(category)
       } else if (search) {
-        this.apiService.searchProducts(search).subscribe(products => {
-          this.products = products;
-        });
+        this.products$ = this.apiService.searchProducts(search)
       }
       if (discount && discount.valueOf() == 'true') {
         this.discount = true;
-      }else{
+      } else {
         this.discount = false;
       }
-
     });
-    if(this.route.snapshot.url[0]){
-
-      if(this.route.snapshot.url[0].path == 'deals'){
-        this.apiService.fetchProducts().subscribe(products => {
-          for(let i=0;i<25;i++){
-            this.products.push(products[i]);
-          }
-          this.discount = true;
-        });
+    
+    if (this.route.snapshot.url[0]) {
+      if (this.route.snapshot.url[0].path == 'deals') {
+        this.products$ = this.apiService.fetchProducts()
+        this.discount = true;
       }
     }
-    
+
   }
   ngOnDestroy(): void {
-    this.products = [];
   }
 }

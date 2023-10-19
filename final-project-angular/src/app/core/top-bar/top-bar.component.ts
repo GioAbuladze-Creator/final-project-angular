@@ -6,8 +6,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon'
-import { ApiService } from 'src/app/shared/services/api.service';
 import { Router, RouterModule } from '@angular/router';
+
+import { ApiService } from 'src/app/shared/services/api.service';
 
 @Component({
   selector: 'app-top-bar',
@@ -34,7 +35,7 @@ export class TopBarComponent implements OnInit {
     private router: Router,
   ) { }
   category: string = '';
-  categories: string[] = [];
+  categories$ = this.apiService.fetchCategories();
   searchQuery: string = '';
   searchForm = this.fb.group({
     search: [''],
@@ -59,11 +60,7 @@ export class TopBarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.apiService.fetchCategories().subscribe({
-      next: data => {
-        this.categories = data;
-      }
-    });
+    
   }
 
 }

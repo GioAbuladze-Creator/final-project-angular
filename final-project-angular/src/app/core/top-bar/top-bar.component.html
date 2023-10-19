@@ -4,7 +4,7 @@
         <input type="text" placeholder="Search Ubisi" class="search" formControlName="search" name="search" (keyup.enter)="onSearch()">
         <select name="category" formControlName="category" class="category">
             <option value="">All Categories</option>
-            <option [value]="category" *ngFor="let category of categories">{{category}}</option>
+            <option [value]="category" *ngFor="let category of categories$ | async">{{category}}</option>
         </select>
         <button mat-icon-button (click)="onSearch()">
             <mat-icon>search</mat-icon>
