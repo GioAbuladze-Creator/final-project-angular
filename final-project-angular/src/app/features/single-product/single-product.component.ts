@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { MatDividerModule } from '@angular/material/divider';
@@ -14,6 +14,7 @@ import { CategoryBarComponent } from 'src/app/core/category-bar/category-bar.com
 @Component({
   selector: 'app-single-product',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     CommonModule,
     SalePipe,

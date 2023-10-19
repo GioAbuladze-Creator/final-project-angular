@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TopBarComponent } from 'src/app/core/top-bar/top-bar.component';
 import { ProductItemComponent } from 'src/app/core/product-item/product-item.component';
@@ -10,6 +10,7 @@ import { CategoryBarComponent } from 'src/app/core/category-bar/category-bar.com
 @Component({
   selector: 'app-main-products',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     CommonModule,
     TopBarComponent,
