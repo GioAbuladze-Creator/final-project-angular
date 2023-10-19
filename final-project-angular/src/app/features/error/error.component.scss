@@ -1,0 +1,22 @@
+@import '../../shared/styles/palette';
+
+div{
+    text-align: center;
+    margin-top: 50px;
+    min-width: 500px;
+    h1{
+        font-size: 70px;
+        font-weight: 400;
+    }
+    h2{
+        font-size: 30px;
+    }
+    h5{
+        font-size: 15px;
+        span{
+            color:$main2;
+            cursor: pointer;
+        }
+    }
+    
+}

@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TopBarComponent } from 'src/app/core/top-bar/top-bar.component';
 import { ProductItemComponent } from 'src/app/core/product-item/product-item.component';
 import { Product } from 'src/app/shared/interfaces/product';
 import { ApiService } from 'src/app/shared/services/api.service';
 import { ActivatedRoute } from '@angular/router';
+import { CategoryBarComponent } from 'src/app/core/category-bar/category-bar.component';
 
 @Component({
   selector: 'app-main-products',
@@ -12,12 +13,13 @@ import { ActivatedRoute } from '@angular/router';
   imports: [
     CommonModule,
     TopBarComponent,
-    ProductItemComponent
+    ProductItemComponent,
+    CategoryBarComponent,
   ],
   templateUrl: './main-products.component.html',
   styleUrls: ['./main-products.component.scss']
 })
-export class MainProductsComponent implements OnInit {
+export class MainProductsComponent implements OnInit, OnDestroy {
   products: Product[] = [];
   discount = false;
   constructor(
@@ -30,6 +32,7 @@ export class MainProductsComponent implements OnInit {
       const category = params['category'];
       const search = params['search'];
       const discount = params['discount'];
+      
       if (category && search) {
         this.apiService.searchProducts(search, category).subscribe(products => {
           this.products = products;
@@ -48,6 +51,22 @@ export class MainProductsComponent implements OnInit {
       }else{
         this.discount = false;
       }
+
     });
+    if(this.route.snapshot.url[0]){
+
+      if(this.route.snapshot.url[0].path == 'deals'){
+        this.apiService.fetchProducts().subscribe(products => {
+          for(let i=0;i<25;i++){
+            this.products.push(products[i]);
+          }
+          this.discount = true;
+        });
+      }
+    }
+    
+  }
+  ngOnDestroy(): void {
+    this.products = [];
   }
 }

@@ -3,12 +3,13 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 import { TopBarComponent } from 'src/app/core/top-bar/top-bar.component';
 import { Product } from 'src/app/shared/interfaces/product';
 import { ApiService } from 'src/app/shared/services/api.service';
 import { SalePipe } from 'src/app/shared/pipes/sale.pipe';
-import { MatButtonModule } from '@angular/material/button';
+import { CategoryBarComponent } from 'src/app/core/category-bar/category-bar.component';
 
 @Component({
   selector: 'app-single-product',
@@ -21,6 +22,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatDividerModule,
     MatIconModule,
     MatButtonModule,
+    CategoryBarComponent
   ],
   templateUrl: './single-product.component.html',
   styleUrls: ['./single-product.component.scss']
@@ -51,9 +53,7 @@ export class SingleProductComponent implements OnInit {
         this.stars[i]='star'
       }
       this.mainImage = this.product.images[0];
-
     })
-    console.log(this.product)
   }
   
 }
