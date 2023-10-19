@@ -5,7 +5,7 @@
     width: 80%;
     min-width:400px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
     margin: 0 auto;
     gap:20px;
@@ -22,10 +22,17 @@
         h3{
             font-weight: 500;
         }
-        img{
+        .product-image{
             width: 200px;
             height: 200px;
-            object-fit: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            img{
+                max-width: 100%;
+                max-height: 100%;
+            }
         }
         .desc{
             width: 90%;

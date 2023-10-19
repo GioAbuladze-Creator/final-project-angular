@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon';
 
 import { TopBarComponent } from 'src/app/core/top-bar/top-bar.component';
 import { Product } from 'src/app/shared/interfaces/product';
 import { ApiService } from 'src/app/shared/services/api.service';
-import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-single-product',
@@ -30,7 +30,11 @@ export class SingleProductComponent implements OnInit {
   product!: Product;
   id!: string;
   stars: { [key: number]: string } ={1:'star_border',2:'star_border',3:'star_border',4:'star_border',5:'star_border'};
+  mainImage: string = '';
 
+  changeImage(image: string) {
+    this.mainImage = image;
+  }
   ngOnInit(): void {
     let id = this.route.snapshot.paramMap.get('id')
     if (id) {
@@ -43,6 +47,7 @@ export class SingleProductComponent implements OnInit {
       for(let i=1;i<=rating;i++){
         this.stars[i]='star'
       }
+      this.mainImage = this.product.images[0];
 
     })
   }

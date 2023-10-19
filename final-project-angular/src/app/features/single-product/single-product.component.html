@@ -1,9 +1,12 @@
 <app-top-bar></app-top-bar>
 <div class="product" *ngIf="product">
     <div class="images">
-        <img [src]="product.images[0]" alt="product_image">
-        <div>
-            <img *ngFor="let image of product.images" [src]="image" alt="product_image">
+        <div class="main-image-container">
+            <img [src]="mainImage" alt="product_image" class="main-image">
+        </div>
+        <div class="img-container">
+            <img *ngFor="let image of product.images" [src]="image" alt="product_image"
+                (click)="changeImage(image)">
         </div>
     </div>
     <div class="description">
