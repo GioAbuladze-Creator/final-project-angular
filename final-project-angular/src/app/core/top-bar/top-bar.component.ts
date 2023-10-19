@@ -7,7 +7,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon'
 import { ApiService } from 'src/app/shared/services/api.service';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-top-bar',
@@ -26,10 +26,11 @@ import { RouterModule } from '@angular/router';
   templateUrl: './top-bar.component.html',
   styleUrls: ['./top-bar.component.scss']
 })
-export class TopBarComponent implements OnInit{
+export class TopBarComponent implements OnInit {
   constructor(
     private apiService: ApiService,
     private fb: FormBuilder,
+    private router: Router,
   ) { }
   category: string = '';
   categories: string[] = [];
@@ -39,36 +40,24 @@ export class TopBarComponent implements OnInit{
     category: ['']
   });
 
-  onSearch(){
+  onSearch() {
     this.searchQuery = this.searchForm.value.search as string;
     this.category = this.searchForm.value.category as string;
-    if(this.searchQuery.length > 0){
-      if(this.category.length > 0){
-        this.apiService.searchProducts(this.searchQuery, this.category).subscribe({
-          next: data => {
-            console.log(data);
-          }
-        });
-      }else{
-        this.apiService.searchProducts(this.searchQuery).subscribe({
-          next: data => {
-            console.log(data);
-          }
-        });
+    if (this.searchQuery.length > 0) {
+      if (this.category.length > 0) {
+        this.router.navigate(['/products'], { queryParams: { category: this.category, search: this.searchQuery } });
+      } else {
+        this.router.navigate(['/products'], { queryParams: { search: this.searchQuery } });
       }
-    }else{
-      if(this.category.length > 0){
-        this.apiService.fetchProdOfCat(this.category).subscribe({
-          next: data => {
-            console.log(data);
-          }
-        })
+    } else {
+      if (this.category.length > 0) {
+        this.router.navigate(['/products'], { queryParams: { category: this.category } });
       }
     }
 
   }
 
-  ngOnInit():void {
+  ngOnInit(): void {
     this.apiService.fetchCategories().subscribe({
       next: data => {
         this.categories = data;

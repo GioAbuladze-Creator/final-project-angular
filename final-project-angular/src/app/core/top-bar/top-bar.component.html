@@ -1,7 +1,7 @@
 <section>
     <img src="../../../assets/ubnisi_logo.png" alt="ubnisi_logo" [routerLink]="['/main']" class="ubnisi_logo">
     <div class="search-bar" [formGroup]="searchForm">
-        <input type="text" placeholder="Search Ubisi" class="search" formControlName="search" name="search">
+        <input type="text" placeholder="Search Ubisi" class="search" formControlName="search" name="search" (keyup.enter)="onSearch()">
         <select name="category" formControlName="category" class="category">
             <option value="">All Categories</option>
             <option [value]="category" *ngFor="let category of categories">{{category}}</option>

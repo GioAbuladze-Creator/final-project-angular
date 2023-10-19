@@ -17,30 +17,34 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './main-products.component.html',
   styleUrls: ['./main-products.component.scss']
 })
-export class MainProductsComponent implements OnInit{
-  products:Product[]=[];
-  discount=false;
+export class MainProductsComponent implements OnInit {
+  products: Product[] = [];
+  discount = false;
   constructor(
-    private apiService:ApiService,
-    private route:ActivatedRoute,
-    ) {}
+    private apiService: ApiService,
+    private route: ActivatedRoute,
+  ) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
       const category = params['category'];
       const search = params['search'];
-      if(category && search){
-        this.apiService.searchProducts(search,category).subscribe(products => {
+      const discount = params['discount'];
+      if (category && search) {
+        this.apiService.searchProducts(search, category).subscribe(products => {
           this.products = products;
         });
-      }else if(category){
+      } else if (category) {
         this.apiService.fetchProdOfCat(category).subscribe(products => {
           this.products = products;
         });
-      }else if(search){
+      } else if (search) {
         this.apiService.searchProducts(search).subscribe(products => {
           this.products = products;
         });
+      }
+      if (discount && discount.valueOf() == 'true') {
+        this.discount = true;
       }
     });
   }
