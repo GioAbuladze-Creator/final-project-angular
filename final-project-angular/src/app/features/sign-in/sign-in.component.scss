@@ -3,14 +3,17 @@
 .container {
     width: 300px;
     height: 380px;
-    margin:0 auto;
+    margin: 0 auto;
     text-align: center;
-    padding-top:100px;
-    img{
-        cursor:pointer;
+    padding-top: 100px;
+    img {
+        cursor: pointer;
+    }
+    div{
+        border: 1px solid $border-color;
+        padding-bottom:20px;
     }
     form {
-        border: 1px solid $border-color;
         padding: 20px 37px;
         display: block;
         border-radius: 7px;
@@ -19,8 +22,9 @@
             font-size: 20px;
             font-weight: 500;
         }
-        .error-message{
-            color:$main1;
+
+        .error-message {
+            color: $main1;
         }
 
         input {
@@ -30,28 +34,31 @@
             border-radius: 5px;
             border: 1px solid $border-color;
             padding: 0 10px;
+
             &.is-invalid {
                 border: 1px solid $main1;
             }
         }
 
-        button {
-            width: 220px;
-            height: 30px;
-            margin: 10px auto;
-            background-color: $main2;
-            color: $white;
-            font-size: 12px;
-            &.sign-up {
-                margin-top: 0;
-                background-color: $main3;
-            }
-            
-        }
 
         p {
             margin-top: 10px;
             font-size: 12px;
         }
+    }
+
+    button {
+        width: 220px;
+        height: 30px;
+        margin: 10px auto;
+        background-color: $main2;
+        color: $white;
+        font-size: 12px;
+
+        &.sign-up {
+            margin-top: -20px;
+            background-color: $main3;
+        }
+
     }
 }

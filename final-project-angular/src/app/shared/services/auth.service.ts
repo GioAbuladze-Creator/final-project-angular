@@ -6,9 +6,9 @@ import { User } from '../interfaces/user';
 })
 
 export class AuthService{
-    loggedUser:User | null={email:'123@gmail.com',password:'123123123',phone:'+995567765542',authorized:false}
+    loggedUser:User | null=null;
 
-    private auth = true;
+    private auth = false;
     
     get isAuthorized(){
         return this.auth;
