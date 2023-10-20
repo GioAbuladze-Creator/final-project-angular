@@ -6,6 +6,7 @@ import { Router, RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { UsersService } from 'src/app/shared/services/users.service';
 import { AuthService } from 'src/app/shared/services/auth.service';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-sign-in',
@@ -22,18 +23,18 @@ import { AuthService } from 'src/app/shared/services/auth.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SignInComponent {
-  invalidLogin: boolean = false;
+  invalidLogin = new BehaviorSubject<boolean>(false);
 
   constructor(
     private fb: FormBuilder,
     private usersService: UsersService,
-    private authService:AuthService,
-    private router:Router
-  ) {}
+    private authService: AuthService,
+    private router: Router
+  ) { }
 
   form = this.fb.group({
-    email: ['',[Validators.required, Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)]],
-    password: ['',[Validators.required]],
+    email: ['', [Validators.required, Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)]],
+    password: ['', [Validators.required]],
   });
   get email() {
     return this.form.get('email')
@@ -42,20 +43,24 @@ export class SignInComponent {
     return this.form.get('password')
   }
   onSignIn() {
-    let found = this.usersService.userList.find((user) => { return user.email == this.email?.value && user.password == this.password?.value })
-    if (found) {
-      this.invalidLogin = false;
-      this.authService.login();
-      found.authorized = true;
-      this.authService.loggedUser = found;
-      console.log(found)
-      this.form.reset();
-      this.router.navigate(['/']);
-    } else {
-      this.form.markAllAsTouched();
-      if (this.email?.value && this.password?.value) {
-        this.invalidLogin = true;
-      }
+    if (this.form.invalid) {
+      this.invalidLogin.next(true);
+    } else if (this.email?.value && this.password?.value) {
+      this.usersService.findUser(this.email.value, this.password.value)
+        .subscribe((data) => {
+          if (data) {
+            this.invalidLogin.next(false);
+            this.authService.login();
+            data.authorized = true;
+            this.authService.loggedUser = data;
+            this.form.reset();
+            //should add save to local storage
+            this.router.navigate(['/']);
+          } else {
+            this.invalidLogin.next(true);
+          }
+        });
+
     }
   }
   onSignUp() {

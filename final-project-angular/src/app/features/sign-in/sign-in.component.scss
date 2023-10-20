@@ -19,6 +19,9 @@
             font-size: 20px;
             font-weight: 500;
         }
+        .error-message{
+            color:$main1;
+        }
 
         input {
             width: 200px;
@@ -38,7 +41,7 @@
             margin: 10px auto;
             background-color: $main2;
             color: $white;
-
+            font-size: 12px;
             &.sign-up {
                 margin-top: 0;
                 background-color: $main3;
