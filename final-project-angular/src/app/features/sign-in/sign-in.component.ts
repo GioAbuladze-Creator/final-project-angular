@@ -4,9 +4,12 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatDividerModule } from '@angular/material/divider';
 import { Router, RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { BehaviorSubject } from 'rxjs';
+
 import { UsersService } from 'src/app/shared/services/users.service';
 import { AuthService } from 'src/app/shared/services/auth.service';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { SignUpComponent } from 'src/app/core/sign-up/sign-up.component';
 
 @Component({
   selector: 'app-sign-in',
@@ -17,6 +20,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
     MatDividerModule,
     RouterLink,
     MatButtonModule,
+    MatDialogModule
   ],
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.scss'],
@@ -29,7 +33,9 @@ export class SignInComponent {
     private fb: FormBuilder,
     private usersService: UsersService,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    public dialog:MatDialog,
+    
   ) { }
 
   form = this.fb.group({
@@ -63,7 +69,12 @@ export class SignInComponent {
 
     }
   }
-  onSignUp() {
+  onSignUp(enterAnimationDuration: string, exitAnimationDuration: string) {
+    this.dialog.open(SignUpComponent,{
+      width:'350px',
+      enterAnimationDuration,
+      exitAnimationDuration,
+    });
   }
 
 }

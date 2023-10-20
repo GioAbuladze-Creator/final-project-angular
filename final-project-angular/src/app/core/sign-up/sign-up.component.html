@@ -1,0 +1,81 @@
+<div class="container-fluid" [formGroup]="form" (submit)="onSubmit()">
+    <h2>Become Ubnisi Member</h2>
+    <form>
+        <div class="names">
+            <div class="form-group">
+                <div>
+                    <input type="text" class="form-control" formControlName="firstname" placeholder="First Name"
+                        [class.is-invalid]="firstname?.invalid&&firstname?.touched" name="firstname">
+                </div>
+
+                <div *ngIf="firstname?.invalid && firstname?.touched" class="text-danger">
+                    <div *ngIf="firstname?.errors?.['required']">First Name is required</div>
+                    <div *ngIf="firstname?.errors?.['pattern']">Only characters</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div>
+                    <input type="text" class="form-control" formControlName="lastname" placeholder="Last Name"
+                        [class.is-invalid]="lastname?.invalid&&lastname?.touched" name="lastname">
+                </div>
+
+                <div *ngIf="lastname?.invalid && lastname?.touched" class="text-danger">
+                    <div *ngIf="lastname?.errors?.['required']">Last Name is required</div>
+                    <div *ngIf="lastname?.errors?.['pattern']">Only characters</div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div>
+                <input type="text" class="form-control" formControlName="email" placeholder="Email"
+                    [class.is-invalid]="email?.invalid&&email?.touched" name="email" autocomplete="on">
+            </div>
+
+            <div *ngIf="email?.invalid && email?.touched" class="text-danger">
+                <div *ngIf="email?.errors?.['required']">Email is required</div>
+                <div *ngIf="email?.errors?.['pattern']">Invalid Email Format</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div>
+                <input type="password" class="form-control" formControlName="password" placeholder="Password"
+                    [class.is-invalid]="password?.invalid&&password?.touched" name="pass">
+            </div>
+            <div *ngIf="password?.invalid && (password?.touched || password?.dirty)" class="text-danger">
+                <div *ngIf="password?.errors?.['required']">Password is required</div>
+                <div *ngIf="password?.errors?.['pattern']">min 7 symbols and only characters or numbers</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div>
+                <input type="password" class="form-control" formControlName="confirmPassword"
+                    placeholder="Confirm Password" name="cpass"
+                    [class.is-invalid]="(confirmPassword?.invalid&&confirmPassword?.touched) ||form.errors?.['misMatch']">
+            </div>
+            <div *ngIf="(confirmPassword?.invalid && confirmPassword?.touched)||form.errors?.['misMatch']"
+                class="text-danger">
+                <div *ngIf="confirmPassword?.errors?.['required']">Confirm Password is required</div>
+                <div *ngIf="form.errors?.['misMatch']">Passwords should be the same</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div>
+                <input type="text" class="form-control" formControlName="phone" placeholder="Phone Number (+995)"
+                    [class.is-invalid]="phone?.invalid&&phone?.touched" name="phone" autocomplete="on">
+            </div>
+            <div *ngIf="phone?.invalid && phone?.touched" class="text-danger">
+                <div *ngIf="phone?.errors?.['required']">Phone number is required</div>
+                <div *ngIf="phone?.errors?.['pattern']">'+995' and your number (9 digits without space) </div>
+            </div>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" formControlName="agreement" class="form-check-input" name="agreement"/>
+            <label class="text-center">I have read the <a [style.cursor]="'pointer'"
+                    class="form-check-label">agreement</a></label>
+        </div>
+
+        <button mat-button class="btn btn-primary" [disabled]="isDisabled()" type="submit">Sign Up</button>
+    </form>
+</div>

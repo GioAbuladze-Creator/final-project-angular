@@ -24,4 +24,16 @@ export class UsersService {
             })
         )
     }
+    checkUser(email: string,number: string) {
+        return this.fetchUsers().pipe(
+            map((users) => {
+                return users.find((user) => {
+                    return user.email == email || user.phone == number
+                })
+            })
+        )
+    }
+    addUser(user: User) {
+        return this.http.post<User>('http://localhost:3000/users', user)
+    }
 }

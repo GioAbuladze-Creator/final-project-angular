@@ -1,0 +1,56 @@
+@import '../../shared/styles/palette';
+
+
+.container-fluid {
+    padding: 10px 0;
+    margin: 0 auto;
+    width: 300px;
+    display: block;
+    justify-content: center;
+    text-align: center;
+    
+    h2{
+        font-size: 30px;
+    }
+    .names {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto 10px auto;
+        padding:0 8px;
+        .form-group {
+            width: 43%;
+            display: block;
+            margin: 0 auto;
+            padding:0;
+            input {
+                margin:0 auto;
+            }
+        }
+
+    }
+
+    input:not([type="checkbox"]) {
+        margin: 10px;
+        width: 80%;
+        height: 30px;
+        border-radius: 5px;
+        border: 1px solid $main3;
+        padding: 0 10px;
+        &.is-invalid{
+            border-color:$main1;
+        }
+    }
+    button{
+        margin:20px;
+        background-color: $main3;
+        color:$white;
+        &:disabled {
+            background-color: $light-main3;
+            color:$white;
+        }
+    }
+    .text-danger{
+        color: $main1;
+        font-size:10px;
+    }
+}
