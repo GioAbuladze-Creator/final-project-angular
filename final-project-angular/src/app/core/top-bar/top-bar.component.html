@@ -1,7 +1,7 @@
 <section>
     <img src="../../../assets/ubnisi_logo.png" alt="ubnisi_logo" [routerLink]="['/']" class="ubnisi_logo">
     <div class="search-bar" [formGroup]="searchForm">
-        <input type="text" placeholder="Search Ubisi" class="search" formControlName="search" name="search" (keyup.enter)="onSearch()">
+        <input type="text" placeholder="Search Ubnisi" class="search" formControlName="search" name="search" (keyup.enter)="onSearch()">
         <select name="category" formControlName="category" class="category">
             <option value="">All Categories</option>
             <option [value]="category" *ngFor="let category of categories$ | async">{{category}}</option>
@@ -12,6 +12,6 @@
     </div>
     <div class="user-options">
         <mat-icon aria-hidden="false" aria-label="cart icon" fontIcon="shopping_cart"></mat-icon>
-        <mat-icon aria-hidden="false" aria-label="person icon" fontIcon="account_circle"></mat-icon>
+        <mat-icon aria-hidden="false" aria-label="person icon" fontIcon="account_circle" (click)="onLogin()"></mat-icon>
     </div>
 </section>

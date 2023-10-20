@@ -9,6 +9,7 @@ import { MatIconModule } from '@angular/material/icon'
 import { Router, RouterModule } from '@angular/router';
 
 import { ApiService } from 'src/app/shared/services/api.service';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-top-bar',
@@ -33,6 +34,7 @@ export class TopBarComponent implements OnInit {
     private apiService: ApiService,
     private fb: FormBuilder,
     private router: Router,
+    private authService: AuthService
   ) { }
   category: string = '';
   categories$ = this.apiService.fetchCategories();
@@ -58,7 +60,13 @@ export class TopBarComponent implements OnInit {
     }
 
   }
-
+  onLogin() {
+    if(!this.authService.isAuthorized){
+      this.router.navigate(['/login']);
+    }else{
+      console.log('needs to implement')
+    }
+  }
   ngOnInit(): void {
     
   }

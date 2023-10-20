@@ -1,0 +1,16 @@
+<div class="container">
+    <img src="../../../assets/ubnisi_logo.png" alt="ubnisi_logo" [routerLink]="['/']">
+    <form [formGroup]="form">
+        <h3>Sign in</h3>
+        <input type="text" formControlName="email" name="email" autocomplete="email" placeholder="email"
+            [class.is-invalid]="invalidLogin">
+        <input type="password" formControlName="password" name="password" placeholder="password"
+            [class.is-invalid]="invalidLogin">
+        <br>
+        <button mat-button (click)="onSignIn()" class="sign-in">Sign in</button>
+        <mat-divider></mat-divider>
+        <p>New To Ubnisi?</p>
+        <button mat-button (click)="onSignUp()" class="sign-up">Create your Ubisi account</button>
+    </form>
+
+</div>
