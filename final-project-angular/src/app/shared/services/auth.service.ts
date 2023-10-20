@@ -6,9 +6,9 @@ import { User } from '../interfaces/user';
 })
 
 export class AuthService{
-    loggedUser:User={email:'123@gmail.com',password:'123123123',phone:'+995567765542',authorized:false}
+    loggedUser:User | null={email:'123@gmail.com',password:'123123123',phone:'+995567765542',authorized:false}
 
-    private auth = false;
+    private auth = true;
     
     get isAuthorized(){
         return this.auth;
@@ -16,10 +16,12 @@ export class AuthService{
     
     constructor() { }
 
-    login(){
+    login(user:User){
+        this.loggedUser = user;
         this.auth = true;
     }
     logout(){
+        this.loggedUser=null
         this.auth = false;
     }
 }

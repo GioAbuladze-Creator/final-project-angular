@@ -7,9 +7,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon'
 import { Router, RouterModule } from '@angular/router';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+
 
 import { ApiService } from 'src/app/shared/services/api.service';
 import { AuthService } from 'src/app/shared/services/auth.service';
+import { SignOutComponent } from '../sign-out/sign-out.component';
 
 @Component({
   selector: 'app-top-bar',
@@ -23,7 +26,8 @@ import { AuthService } from 'src/app/shared/services/auth.service';
     MatSelectModule,
     MatInputModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule
 
   ],
   templateUrl: './top-bar.component.html',
@@ -34,7 +38,8 @@ export class TopBarComponent implements OnInit {
     private apiService: ApiService,
     private fb: FormBuilder,
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private dialog: MatDialog,
   ) { }
   category: string = '';
   categories$ = this.apiService.fetchCategories();
@@ -61,14 +66,23 @@ export class TopBarComponent implements OnInit {
 
   }
   onLogin() {
-    if(!this.authService.isAuthorized){
+    if (!this.authService.isAuthorized) {
       this.router.navigate(['/login']);
-    }else{
-      console.log('needs to implement')
+    } else {
+      this.openDialog('0.2s', '0.2s');
     }
   }
+
+  openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
+    this.dialog.open(SignOutComponent, {
+      width: '200px',
+      enterAnimationDuration,
+      exitAnimationDuration,
+    });
+  }
+
   ngOnInit(): void {
-    
+
   }
 
 }

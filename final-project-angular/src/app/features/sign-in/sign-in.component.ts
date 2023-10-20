@@ -50,7 +50,7 @@ export class SignInComponent {
         .subscribe((data) => {
           if (data) {
             this.invalidLogin.next(false);
-            this.authService.login();
+            this.authService.login(data);
             data.authorized = true;
             this.authService.loggedUser = data;
             this.form.reset();
