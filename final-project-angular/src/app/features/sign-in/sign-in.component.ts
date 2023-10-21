@@ -10,6 +10,7 @@ import { BehaviorSubject } from 'rxjs';
 import { UsersService } from 'src/app/shared/services/users.service';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { SignUpComponent } from 'src/app/core/sign-up/sign-up.component';
+import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -35,7 +36,7 @@ export class SignInComponent {
     private authService: AuthService,
     private router: Router,
     public dialog:MatDialog,
-    
+    private localStorage:LocalStorageService,    
   ) { }
 
   form = this.fb.group({
@@ -60,8 +61,12 @@ export class SignInComponent {
             data.authorized = true;
             this.authService.loggedUser = data;
             this.form.reset();
-            //should add save to local storage
-            this.router.navigate(['/']);
+            if(this.localStorage.get('redirectUrl',false)){
+              this.router.navigate([this.localStorage.get('redirectUrl',false)])
+              this.localStorage.remove('redirectUrl')
+            }else{
+              this.router.navigate(['/'])
+            }
           } else {
             this.invalidLogin.next(true);
           }

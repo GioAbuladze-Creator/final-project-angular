@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -12,6 +12,8 @@ import { SalePipe } from 'src/app/shared/pipes/sale.pipe';
 import { CategoryBarComponent } from 'src/app/core/category-bar/category-bar.component';
 import { Observable, tap } from 'rxjs';
 import { CartService } from '../cart/cart.service';
+import { AuthService } from 'src/app/shared/services/auth.service';
+import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
 
 @Component({
   selector: 'app-single-product',
@@ -34,7 +36,10 @@ export class SingleProductComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private apiService: ApiService,
-    private cartService:CartService
+    private cartService:CartService,
+    private authService:AuthService,
+    private router:Router,
+    private localstorage:LocalStorageService
   ) { }
   product$!: Observable<Product>;
   id!: string;
@@ -61,6 +66,11 @@ export class SingleProductComponent implements OnInit {
     )
   }
   addToCart(product: Product) {
+    if(!this.authService.isAuthorized){
+      this.localstorage.set('redirectUrl',this.router.url)
+      this.router.navigate(['/login'])
+      return
+    }
     this.cartService.addToCart(product);
   }
   

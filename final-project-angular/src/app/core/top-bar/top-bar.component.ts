@@ -15,6 +15,7 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 import { SignOutComponent } from '../sign-out/sign-out.component';
 import { CartService } from 'src/app/features/cart/cart.service';
 import { map } from 'rxjs';
+import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
 
 @Component({
   selector: 'app-top-bar',
@@ -43,6 +44,7 @@ export class TopBarComponent implements OnInit {
     private authService: AuthService,
     private dialog: MatDialog,
     private cartService: CartService,
+    private localStorage: LocalStorageService
   ) { }
   category: string = '';
   categories$ = this.apiService.fetchCategories();
@@ -70,9 +72,19 @@ export class TopBarComponent implements OnInit {
   }
   onLogin() {
     if (!this.authService.isAuthorized) {
+      this.localStorage.set('redirectUrl', this.router.url);
       this.router.navigate(['/login']);
     } else {
       this.openDialog('0.2s', '0.2s');
+    }
+  }
+  onCart(){
+    if(!this.authService.isAuthorized){
+      this.localStorage.set('redirectUrl',this.router.url)
+      this.router.navigate(['/login'])
+      return
+    }else{
+      this.router.navigate(['/cart'])
     }
   }
 

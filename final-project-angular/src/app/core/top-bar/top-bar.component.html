@@ -12,7 +12,7 @@
     </div>
     <div class="user-options">
         <div>
-            <mat-icon aria-hidden="false" aria-label="cart icon" fontIcon="shopping_cart" [routerLink]="['/cart']"></mat-icon>
+            <mat-icon aria-hidden="false" aria-label="cart icon" fontIcon="shopping_cart" (click)="onCart()"></mat-icon>
             <div class="badge" *ngIf="cartSize | async as cartSize" >{{ cartSize }}</div>
         </div>
         <mat-icon aria-hidden="false" aria-label="person icon" fontIcon="account_circle" (click)="onLogin()"></mat-icon>
