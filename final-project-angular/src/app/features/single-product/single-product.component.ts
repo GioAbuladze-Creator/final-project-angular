@@ -11,6 +11,7 @@ import { ApiService } from 'src/app/shared/services/api.service';
 import { SalePipe } from 'src/app/shared/pipes/sale.pipe';
 import { CategoryBarComponent } from 'src/app/core/category-bar/category-bar.component';
 import { Observable, tap } from 'rxjs';
+import { CartService } from '../cart/cart.service';
 
 @Component({
   selector: 'app-single-product',
@@ -33,6 +34,7 @@ export class SingleProductComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private apiService: ApiService,
+    private cartService:CartService
   ) { }
   product$!: Observable<Product>;
   id!: string;
@@ -57,6 +59,9 @@ export class SingleProductComponent implements OnInit {
       })
       
     )
+  }
+  addToCart(product: Product) {
+    this.cartService.addToCart(product);
   }
   
 }

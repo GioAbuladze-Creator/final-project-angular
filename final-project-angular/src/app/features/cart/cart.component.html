@@ -1,0 +1,7 @@
+<app-top-bar></app-top-bar>
+<app-category-bar></app-category-bar>
+<div *ngFor="let product of products">
+    {{ product.title }} - {{ product.price }}
+    <button (click)="removeFromCart(product)">Remove</button>
+</div>
+<div *ngIf="products.length === 0">Cart is empty</div>

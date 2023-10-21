@@ -13,6 +13,8 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { ApiService } from 'src/app/shared/services/api.service';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { SignOutComponent } from '../sign-out/sign-out.component';
+import { CartService } from 'src/app/features/cart/cart.service';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-top-bar',
@@ -40,6 +42,7 @@ export class TopBarComponent implements OnInit {
     private router: Router,
     private authService: AuthService,
     private dialog: MatDialog,
+    private cartService: CartService,
   ) { }
   category: string = '';
   categories$ = this.apiService.fetchCategories();
@@ -80,7 +83,9 @@ export class TopBarComponent implements OnInit {
       exitAnimationDuration,
     });
   }
-
+  cartSize = this.cartService.products$.pipe(
+    map(products => products.length)
+  );
   ngOnInit(): void {
 
   }
