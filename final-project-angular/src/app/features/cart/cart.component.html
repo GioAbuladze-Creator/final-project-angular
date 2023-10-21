@@ -5,7 +5,7 @@
         <h1>Shopping Cart</h1>
         <mat-divider></mat-divider>
         <div *ngIf="products.length>0" class="product-container">
-            <div *ngFor="let product of products" class="wrapper">
+            <div *ngFor="let product of products" class="wrapper" [routerLink]="['/product',product.id]">
                 <div class="product">
                     <div class="img-container">
                         <img [src]="product.item.thumbnail" [alt]="product.item.title" />

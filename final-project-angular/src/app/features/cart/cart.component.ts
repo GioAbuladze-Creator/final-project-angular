@@ -7,6 +7,7 @@ import { CategoryBarComponent } from 'src/app/core/category-bar/category-bar.com
 import { CartItem } from './cart-item.interface';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -17,6 +18,7 @@ import { MatButtonModule } from '@angular/material/button';
     CategoryBarComponent,
     MatDividerModule,
     MatButtonModule,
+    RouterLink
 
   ],
   templateUrl: './cart.component.html',
