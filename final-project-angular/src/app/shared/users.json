@@ -1,76 +1,12 @@
 {
   "users": [
     {
-      "id": 1,
-      "firstname": "vaska",
-      "lastname": "kutuxovi",
+      "firstname": "Giorgi",
+      "lastname": "Abuladze",
       "email": "123@gmail.com",
       "password": "123123123",
-      "phone": "+995123123123"
-    },
-    {
-      "id": 2,
-      "firstname": "sashka",
-      "lastname": "bratka",
-      "email": "asd@gmail.com",
-      "password": "asdasdasd",
-      "phone": "+995123123123"
-    },
-    {
-      "firstname": "giorgi",
-      "lastname": "abuladze",
-      "email": "123g@gmail.com",
-      "password": "asdasdasd",
-      "phone": "+995567543345",
-      "id": 3
-    },
-    {
-      "firstname": "giorgi",
-      "lastname": "asd",
-      "email": "123gg@gmail.com",
-      "password": "123123123",
-      "phone": "+995541231121",
-      "id": 4
-    },
-    {
-      "firstname": "gvav",
-      "lastname": "asdio",
-      "email": "123@gg.co",
-      "password": "123123123",
-      "phone": "+995223123123",
-      "id": 5
-    },
-    {
-      "firstname": "asjoi",
-      "lastname": "asiojd",
-      "email": "123123@mail.com",
-      "password": "123123123",
-      "phone": "+995123123122",
-      "id": 6
-    },
-    {
-      "firstname": "asfjio",
-      "lastname": "asfoij",
-      "email": "asd@gmaic.om",
-      "password": "asdasdasd",
-      "phone": "+995312123123",
-      "id": 7
-    },
-    {
-      "firstname": "gio",
-      "lastname": "Abu",
-      "email": "12s3@gmail.com",
-      "password": "123123123",
-      "phone": "+995413123112",
-      "id": 8
-    },
-    {
-      "firstname": "fsa",
-      "lastname": "afs",
-      "email": "aiosj@gmail.com",
-      "password": "123123123",
-      "phone": "+995412312312",
-      "id": 9
+      "phone": "+995512123123",
+      "id": 1
     }
   ]
 }
