@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatDividerModule } from '@angular/material/divider';
-import { Router, RouterLink } from '@angular/router';
+import { NavigationExtras, Router, RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { BehaviorSubject } from 'rxjs';
@@ -61,8 +61,13 @@ export class SignInComponent {
             data.authorized = true;
             this.authService.loggedUser = data;
             this.form.reset();
-            if(this.localStorage.get('redirectUrl',false)){
-              this.router.navigate([this.localStorage.get('redirectUrl',false)])
+
+            if(this.localStorage.get('redirectUrl')){
+              const navigationExtras:NavigationExtras={
+                queryParamsHandling:'preserve',
+                preserveFragment:true
+              }
+              this.router.navigateByUrl(this.localStorage.get('redirectUrl') as string,navigationExtras)
               this.localStorage.remove('redirectUrl')
             }else{
               this.router.navigate(['/'])

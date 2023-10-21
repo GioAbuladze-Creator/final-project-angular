@@ -5,17 +5,38 @@ import { Injectable } from "@angular/core";
 })
 
 export class LocalStorageService {
-    get(key: string, fallback:any): string {
-        let value=localStorage.getItem(key);
-        return value ? JSON.parse(value) : fallback;
+    get(key: string) {
+        try {
+            const value = localStorage.getItem(key);
+            if (value) {
+                return decodeURIComponent(value);
+            }
+            return null;
+            
+        } catch (error) {
+            throw new Error('Error while getting data from localStorage');
+        }
     }
-    set(key:string,value:any){
-        localStorage.setItem(key,JSON.stringify(value));
+    set(key: string, value: any) {
+        try {
+            const encodedValue = encodeURIComponent(value);
+            localStorage.setItem(key, encodedValue);
+        } catch (error) {
+            console.error('Error while setting data in localStorage:', error);
+        }
     }
-    remove(key:string){
-        localStorage.removeItem(key);
+    remove(key: string) {
+        try {
+            localStorage.removeItem(key);
+        } catch (error) {
+            console.error('Error while removing data from localStorage:', error);
+        }
     }
-    clear(){
-        localStorage.clear();
+    clear() {
+        try {
+            localStorage.clear();
+        } catch (error) {
+            console.error('Error while clearing localStorage:', error);
+        }
     }
 }
