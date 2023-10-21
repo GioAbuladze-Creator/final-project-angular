@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 
 import { TopBarComponent } from '../top-bar/top-bar.component';
 import { AuthService } from 'src/app/shared/services/auth.service';
+import { CartService } from 'src/app/features/cart/cart.service';
 
 @Component({
   selector: 'app-sign-out',
@@ -23,11 +24,13 @@ export class SignOutComponent {
   constructor(
     public dialogRef: MatDialogRef<TopBarComponent>,
     private Auth:AuthService,
-    private router: Router
+    private router: Router,
+    private cartService:CartService
   ) { }
 
   logout(): void {
     this.Auth.logout();
+    this.cartService.clearCart();
     this.router.navigate(['/']);
     this.dialogRef.close();
   }
