@@ -16,10 +16,14 @@ export class CartService {
 
   addToCart(product: Product) {
     const currentProducts = this.productsSubject.getValue();
-    const existingProduct = currentProducts.find((p) => p.id === product.id);
+    const existingProductIndex = currentProducts.findIndex((p) => p.id === product.id);
 
-    if (existingProduct) {
-      existingProduct.quantity ++;
+    if (existingProductIndex !== -1) {
+      const updatedProduct = { ...currentProducts[existingProductIndex] };
+      updatedProduct.quantity++;
+      const updatedProducts = [...currentProducts];
+      updatedProducts[existingProductIndex] = updatedProduct;
+      this.productsSubject.next(updatedProducts);
     } else {
       this.productsSubject.next([...currentProducts, { id: product.id, item: product, quantity: 1 }]);
     }

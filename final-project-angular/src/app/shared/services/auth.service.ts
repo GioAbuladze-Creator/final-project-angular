@@ -8,7 +8,7 @@ import { User } from '../interfaces/user';
 export class AuthService{
     loggedUser:User | null=null;
 
-    private auth = false;
+    private auth = true;
     
     get isAuthorized(){
         return this.auth;

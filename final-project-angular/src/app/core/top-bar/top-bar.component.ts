@@ -78,12 +78,12 @@ export class TopBarComponent implements OnInit {
       this.openDialog('0.2s', '0.2s');
     }
   }
-  onCart(){
-    if(!this.authService.isAuthorized){
-      this.localStorage.set('redirectUrl',this.router.url)
+  onCart() {
+    if (!this.authService.isAuthorized) {
+      this.localStorage.set('redirectUrl', this.router.url)
       this.router.navigate(['/login'])
       return
-    }else{
+    } else {
       this.router.navigate(['/cart'])
     }
   }
@@ -96,7 +96,13 @@ export class TopBarComponent implements OnInit {
     });
   }
   cartSize = this.cartService.products$.pipe(
-    map(products => products.length)
+    map(products => {
+      let cartsize = 0;
+      products.forEach(product => {
+        cartsize += product.quantity
+      })
+      return cartsize
+    })
   );
   ngOnInit(): void {
 
