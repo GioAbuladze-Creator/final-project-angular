@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
 import { TopBarComponent } from 'src/app/core/top-bar/top-bar.component';
@@ -8,7 +8,7 @@ import { ProductItemComponent } from 'src/app/core/product-item/product-item.com
 import { Product } from 'src/app/shared/interfaces/product';
 import { ApiService } from 'src/app/shared/services/api.service';
 import { CategoryBarComponent } from 'src/app/core/category-bar/category-bar.component';
-import { QuoteBarComponent } from 'src/app/core/quote-api/quote-bar.component';
+import { QuoteBarComponent } from 'src/app/core/quote-bar/quote-bar.component';
 
 @Component({
   selector: 'app-main-products',
@@ -30,6 +30,7 @@ export class MainProductsComponent implements OnInit, OnDestroy {
   constructor(
     private apiService: ApiService,
     private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -44,6 +45,10 @@ export class MainProductsComponent implements OnInit, OnDestroy {
         this.products$ = this.apiService.fetchProdOfCat(category)
       } else if (search) {
         this.products$ = this.apiService.searchProducts(search)
+      } else if (this.route.snapshot.url[0]) {
+        if (this.route.snapshot.url[0].path == 'products') {
+          this.router.navigate(['/error']);
+        }
       }
       if (discount && discount.valueOf() == 'true') {
         this.discount = true;
@@ -51,7 +56,7 @@ export class MainProductsComponent implements OnInit, OnDestroy {
         this.discount = false;
       }
     });
-    
+
     if (this.route.snapshot.url[0]) {
       if (this.route.snapshot.url[0].path == 'deals') {
         this.products$ = this.apiService.fetchProducts()

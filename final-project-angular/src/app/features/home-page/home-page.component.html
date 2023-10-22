@@ -1,0 +1,20 @@
+<app-quote-bar></app-quote-bar>
+<app-top-bar></app-top-bar>
+<app-category-bar></app-category-bar>
+<section class="slider-container">
+    <div class="slider-wrapper">
+        <div class="slider">
+            <img src="../../../assets/smartphones.jpg" alt="smartphones" id="slide-1" [routerLink]="['/products']" [queryParams]="{category:'smartphones',discount:true}">
+
+            <img src="../../../assets/watches.jpg" alt="smartphones" id="slide-2" [routerLink]="['/products']" [queryParams]="{category:'mens-watches',discount:true}">
+
+            <img src="../../../assets/women-fragrance.jpg" alt="smartphones" id="slide-3" [routerLink]="['/products']" [queryParams]="{category:'fragrances',discount:true}">
+        </div>
+        <div class="slider-nav">
+            <a href="#slide-1"></a>
+            <a href="#slide-2"></a>
+            <a href="#slide-3"></a>
+        </div>
+    </div>
+
+</section> 
