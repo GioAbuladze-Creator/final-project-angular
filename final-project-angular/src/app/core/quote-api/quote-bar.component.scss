@@ -1,0 +1,19 @@
+@import '../../shared/styles/palette';
+div{
+    border-bottom: 1px solid $border-color;
+    text-align: center;
+    height: 20px;
+    font-size: 12px;
+    min-width: 520px;
+    p{
+        margin: 0;
+        padding: 0;
+        color:$main1;
+        mat-icon{
+            font-size: 14px;
+            height: 14px;
+            width: 14px;
+            vertical-align:baseline;
+        }
+    }
+}
