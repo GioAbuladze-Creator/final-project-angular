@@ -55,7 +55,14 @@ export class MainProductsComponent implements OnInit, OnDestroy {
       } else {
         this.discount = false;
       }
+      const validQueryParams = ['category', 'search', 'discount'];
+      const invalidQueryParams = Object.keys(params).filter(param => !validQueryParams.includes(param));
+
+      if (invalidQueryParams.length > 0) {
+        this.router.navigate(['/error']);
+      }
     });
+
 
     if (this.route.snapshot.url[0]) {
       if (this.route.snapshot.url[0].path == 'deals') {
