@@ -1,5 +1,7 @@
 <app-quote-bar></app-quote-bar>
 <app-top-bar></app-top-bar>
 <app-category-bar></app-category-bar>
-<app-product-item *ngIf='products$ | async as products' [products]="(products)!" [discount]="discount"></app-product-item>
-<div *ngIf="!(products$ | async)?.length" class="no-products">No products here</div>
+<ng-container *ngIf='products$ | async as products'>
+    <app-product-item *ngIf="products.length > 0" [products]="(products)!" [discount]="discount"></app-product-item>
+    <div *ngIf="products.length === 0" class="no-products">No products here</div>
+</ng-container>
