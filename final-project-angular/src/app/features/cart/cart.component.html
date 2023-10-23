@@ -30,7 +30,19 @@
             <button mat-button [routerLink]="['/checkout']">Checkout</button>
         </div>
         <div class="purchase-history">
-            
+            <div *ngFor="let product of user.purchased" [routerLink]="['/product',product.id]" class="product">
+                <div class="wrapper">
+                    <div class="img-container">
+                        <img [src]="product.item.thumbnail" alt="product-icon">
+                    </div>
+                    <div class="details">
+                        <h3>{{product.item.title}}</h3>
+                        <p><b>Price:</b> {{product.item.price | currency}}</p>
+                        <p><b>Amount:</b> {{product.quantity}}</p>
+                    </div>
+                </div>
+                <mat-divider></mat-divider>
+            </div>
         </div>
     </div>
 </section>

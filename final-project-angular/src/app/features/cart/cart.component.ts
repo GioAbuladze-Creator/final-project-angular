@@ -8,6 +8,8 @@ import { CartItem } from './cart-item.interface';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
+import { AuthService } from 'src/app/shared/services/auth.service';
+import { User } from 'src/app/shared/interfaces/user';
 
 @Component({
   selector: 'app-cart',
@@ -29,7 +31,8 @@ export class CartComponent {
   products: CartItem[] = [];
   total = 0;
   constructor(
-    private cartService: CartService
+    private cartService: CartService,
+    private auth:AuthService
   ) {
     this.cartService.products$.subscribe({
       next:(products) => {
@@ -39,7 +42,7 @@ export class CartComponent {
       error: (err) => {console.log(err)},
     });
   }
-
+  user=this.auth.loggedUser as User;
   removeFromCart(product: CartItem) {
     this.cartService.removeFromCart(product);
   }
