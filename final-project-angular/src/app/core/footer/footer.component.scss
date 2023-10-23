@@ -1,0 +1,19 @@
+@import '../../shared/styles/palette';
+
+section{
+    min-width: 500px;
+    border-top:1px solid $border-color;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    p{
+        margin:0;
+        span{
+            color:$main2;
+            cursor: pointer;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}
