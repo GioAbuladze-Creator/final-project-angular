@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from '../interfaces/user';
+import { CartService } from 'src/app/features/cart/cart.service';
+import { UsersService } from './users.service';
 
 @Injectable({
     providedIn: 'root',
@@ -14,7 +16,20 @@ export class AuthService{
         return this.auth;
     }
     
-    constructor() { }
+    constructor(
+        private cartService: CartService,
+        private usersService: UsersService
+    ) { 
+        this.cartService.products$.subscribe({
+            next:(products) => {
+                if(this.loggedUser){
+                    this.loggedUser.cart = products;
+                    this.usersService.updateUser(this.loggedUser).subscribe();
+                }
+            },
+            error: (err) => {console.log(err)},
+        });
+    }
 
     login(user:User){
         this.loggedUser = user;

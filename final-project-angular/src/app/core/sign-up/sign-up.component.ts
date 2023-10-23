@@ -67,7 +67,9 @@ export class SignUpComponent {
                         lastname: this.lastname?.value!,
                         email: this.email?.value!,
                         password: this.password?.value!,
-                        phone: this.phone?.value!
+                        phone: this.phone?.value!,
+                        cart: [],
+                        purchased: []
                       }
                     ).subscribe(
                       {

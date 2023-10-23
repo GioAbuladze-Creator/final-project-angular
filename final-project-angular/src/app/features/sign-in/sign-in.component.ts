@@ -11,6 +11,8 @@ import { UsersService } from 'src/app/shared/services/users.service';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { SignUpComponent } from 'src/app/core/sign-up/sign-up.component';
 import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
+import { CartService } from '../cart/cart.service';
+import { CartItem } from '../cart/cart-item.interface';
 
 @Component({
   selector: 'app-sign-in',
@@ -36,7 +38,8 @@ export class SignInComponent {
     private authService: AuthService,
     private router: Router,
     public dialog:MatDialog,
-    private localStorage:LocalStorageService,    
+    private localStorage:LocalStorageService,   
+    private cartService:CartService 
   ) { }
 
   form = this.fb.group({
@@ -60,6 +63,7 @@ export class SignInComponent {
             this.authService.login(data);
             data.authorized = true;
             this.authService.loggedUser = data;
+            this.cartService.productsSubject.next([...data.cart as CartItem[]]);
             this.form.reset();
 
             if(this.localStorage.get('redirectUrl')){

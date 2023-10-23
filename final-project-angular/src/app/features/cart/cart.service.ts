@@ -9,7 +9,7 @@ import { CartItem } from './cart-item.interface';
 })
 
 export class CartService {
-  private productsSubject = new BehaviorSubject<CartItem[]>([]);
+  productsSubject = new BehaviorSubject<CartItem[]>([]);
   products$ = this.productsSubject.asObservable();
 
   constructor() { }

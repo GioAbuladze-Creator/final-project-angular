@@ -30,8 +30,8 @@ export class SignOutComponent {
 
   logout(): void {
     this.Auth.logout();
-    this.cartService.clearCart();
     this.router.navigate(['/']);
     this.dialogRef.close();
+    this.cartService.clearCart();
   }
 }

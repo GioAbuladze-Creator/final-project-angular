@@ -36,4 +36,7 @@ export class UsersService {
     addUser(user: User) {
         return this.http.post<User>('http://localhost:3000/users', user)
     }
+    updateUser(user: User) {
+        return this.http.put<User>(`http://localhost:3000/users/${user.id}`, user)
+    }
 }
