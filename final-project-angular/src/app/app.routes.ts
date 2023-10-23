@@ -9,5 +9,6 @@ export const routes: Routes = [
     { path: 'deals', loadComponent: (() => import('./features/main-products/main-products.component').then(m => m.MainProductsComponent)) },
     { path: 'login', loadComponent: (() => import('./features/sign-in/sign-in.component').then(m => m.SignInComponent)), canActivate: [isUserLoggedOutGuard] },
     { path: 'cart', loadComponent: (() => import('./features/cart/cart.component').then(m => m.CartComponent)), canActivate: [isUserLoggedInGuard] },
+    { path: 'checkout', loadComponent: (() => import('./features/checkout/checkout.component').then(m => m.CheckoutComponent)), canActivate: [isUserLoggedInGuard] },
     { path: '**', loadComponent: (() => import('./features/error/error.component').then(m => m.ErrorComponent)) }
 ];

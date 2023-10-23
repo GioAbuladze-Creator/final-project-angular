@@ -43,7 +43,5 @@ export class CartComponent {
   removeFromCart(product: CartItem) {
     this.cartService.removeFromCart(product);
   }
-  checkout() {
-    alert('checkout');
-  }
+  
 }

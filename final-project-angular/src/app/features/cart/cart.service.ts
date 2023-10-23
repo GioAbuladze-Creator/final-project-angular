@@ -35,6 +35,13 @@ export class CartService {
     });
     return total;
   }
+  getQuantity(products: CartItem[]) {
+    let quantity=0;
+    products.forEach((p) => {
+      quantity += p.quantity;
+    });
+    return quantity;
+  }
   removeFromCart(product: CartItem) {
     const currentProducts = this.productsSubject.getValue();
     const updatedProducts = currentProducts.filter((p) => p.id !== product.id);

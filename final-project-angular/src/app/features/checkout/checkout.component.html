@@ -1,0 +1,154 @@
+<section>
+    <div class="header">
+        <img src="../../../assets/ubnisi_logo.png" alt="ubnisi_logo" [routerLink]="['/']" class="ubnisi_logo">
+        <h1>Checkout</h1>
+    </div>
+    <div class="content">
+        <div class="info">
+            <div class="items">
+                <h3>Review item and shipping</h3>
+                <div *ngFor="let product of products">
+                    <mat-divider></mat-divider>
+                    <div class="item">
+                        <div class="img-container">
+                            <img [src]="product.item.thumbnail" alt="product image">
+                        </div>
+                        <div class="item-info">
+                            <h3>{{product.item.title}}</h3>
+                            <h4>{{product.item.price | currency}}</h4>
+                            <h5>Qty: {{product.quantity}}</h5>
+                            <h5><b>Delivery:</b> <span>Free FedEx Ground Economy</span></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="forms">
+                <div class="address-form">
+                    <h3>Shipping address</h3>
+                    <form [formGroup]="addressForm">
+                        <div class="form-group">
+                            <input [class.is-invalid]="fullName?.invalid&&fullName?.touched" type="text"
+                                placeholder="Full Name" formControlName="fullName">
+                            <div *ngIf="fullName?.invalid && fullName?.touched" class="text-danger">
+                                <div *ngIf="fullName?.errors?.['required']">Name is required</div>
+                                <div *ngIf="fullName?.errors?.['pattern']">Only characters</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" formControlName="country">
+                        </div>
+                        <div class="form-group">
+                            <input [class.is-invalid]="addr1?.invalid&&addr1?.touched" type="text"
+                                placeholder="Street Address" formControlName="addr1">
+                            <div *ngIf="addr1?.invalid && addr1?.touched" class="text-danger">
+                                <div *ngIf="addr1?.errors?.['required']">Address is required</div>
+                                <div *ngIf="addr1?.errors?.['pattern']">Only characters</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input [class.is-invalid]="addr2?.invalid" type="text"
+                                placeholder="Street Address 2 (optional)" formControlName="addr2">
+                            <div *ngIf="addr2?.invalid && addr2?.touched" class="text-danger">
+                                <div *ngIf="addr2?.errors?.['pattern']">Only characters</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input [class.is-invalid]="city?.invalid&&city?.touched" type="text" placeholder="City"
+                                formControlName="city">
+                            <div *ngIf="city?.invalid && city?.touched" class="text-danger">
+                                <div *ngIf="city?.errors?.['required']">City is required</div>
+                                <div *ngIf="city?.errors?.['pattern']">Only characters</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input [class.is-invalid]="state?.invalid&&state?.touched" type="text"
+                                placeholder="State/Province/Region" formControlName="state">
+                            <div *ngIf="state?.invalid && state?.touched" class="text-danger">
+                                <div *ngIf="state?.errors?.['required']">State is required</div>
+                                <div *ngIf="state?.errors?.['pattern']">Only characters</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input [class.is-invalid]="zip?.invalid&&zip?.touched" type="text" placeholder="ZIP code"
+                                formControlName="zip">
+                            <div *ngIf="zip?.invalid && zip?.touched" class="text-danger">
+                                <div *ngIf="zip?.errors?.['required']">Zip code is required</div>
+                                <div *ngIf="zip?.errors?.['pattern']">4 digit number</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input [class.is-invalid]="phone?.invalid&&phone?.touched" type="text"
+                                placeholder="Phone Number" formControlName="phone">
+                            <div *ngIf="phone?.invalid && phone?.touched" class="text-danger">
+                                <div *ngIf="phone?.errors?.['required']">Phone number is required</div>
+                                <div *ngIf="phone?.errors?.['pattern']">'+995' and 9-digit number</div>
+                            </div>
+                        </div>
+                        <button mat-button (click)="onAddressSubmit()" [disabled]="addressSwitch">Done</button>
+                        <button mat-button (click)="onAddressEdit()" [disabled]="!addressSwitch">Edit</button>
+                    </form>
+                </div>
+                <div class="card-form">
+                    <h3>Paying method</h3>
+                    <form [formGroup]="cardForm">
+                        <div class="form-group">
+                            <input [class.is-invalid]="cardNumber?.invalid&&cardNumber?.touched" type="text"
+                                placeholder="Card Number" formControlName="cardNumber"
+                                (input)="formatCreditCardNumber()" maxlength="19">
+                            <div *ngIf="cardNumber?.invalid && cardNumber?.touched" class="text-danger">
+                                <div *ngIf="cardNumber?.errors?.['required']">Card number is required</div>
+                                <div *ngIf="cardNumber?.errors?.['pattern']">16 digit number</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input [class.is-invalid]="cardName?.invalid&&cardName?.touched" type="text"
+                                placeholder="Card Holder" formControlName="cardName">
+                            <div *ngIf="cardName?.invalid && cardName?.touched" class="text-danger">
+                                <div *ngIf="cardName?.errors?.['required']">Name is required</div>
+                                <div *ngIf="cardName?.errors?.['pattern']">Only characters</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input [class.is-invalid]="cardDate?.invalid&&cardDate?.touched" type="text"
+                                placeholder="MM/YY" formControlName="cardDate">
+                            <div *ngIf="cardDate?.invalid && cardDate?.touched" class="text-danger">
+                                <div *ngIf="cardDate?.errors?.['required']">Date is required</div>
+                                <div *ngIf="cardDate?.errors?.['pattern']">MM/YY</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input [class.is-invalid]="cardCvv?.invalid&&cardCvv?.touched" type="text" placeholder="CVV"
+                                formControlName="cardCvv">
+                            <div *ngIf="cardCvv?.invalid && cardCvv?.touched" class="text-danger">
+                                <div *ngIf="cardCvv?.errors?.['required']">CVV is required</div>
+                                <div *ngIf="cardCvv?.errors?.['pattern']">3 digit number</div>
+                            </div>
+                        </div>
+                        <button mat-button (click)="onCardSubmit()" [disabled]="cardSwitch">Done</button>
+                        <button mat-button (click)="onCardEdit()" [disabled]="!cardSwitch">Edit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="submit">
+            <div class="flex">
+                <p>Items ({{ itemNum }})</p>
+                <p>{{total | currency}}</p>
+            </div>
+            <div class="flex">
+                <p>Shipping</p>
+                <p>Free</p>
+            </div>
+            <mat-divider></mat-divider>
+            <div class="flex">
+                <h4><b>Order Total</b></h4>
+                <h4><b>{{total | currency}}</b></h4>
+            </div>
+            <div>
+                <p class="terms">By placing your order, you agree to our <br><span>User Agreement</span> and <span>Privacy
+                        Notice</span></p>
+            </div>
+            <button mat-button [disabled]="!addressSwitch || !cardSwitch" (click)="onCheckout()">Confirm and pay</button>
+        </div>
+    </div>
+</section>

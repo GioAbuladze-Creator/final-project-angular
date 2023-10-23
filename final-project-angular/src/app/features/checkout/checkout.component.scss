@@ -1,0 +1,172 @@
+@import '../../shared/styles/palette';
+
+section {
+    min-width: 500px;
+    padding: 50px 10px;
+    .header{
+        margin-left:10%;
+        display: flex;
+        margin-bottom:40px;
+        img{
+            cursor: pointer;
+        }
+        h1 {
+            font-size: 40px;
+            color: $main2;
+            margin-top:10px;
+        }
+
+    }
+
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap:20px;
+        
+
+        .info {
+            width: 55%;
+            max-width: 569px;
+            margin-bottom:50px;
+            
+
+            .items {
+                border: 1px solid $border-color;
+                padding: 10px 20px;
+
+                .item {
+                    display: flex;
+                    margin: 10px 0;
+                    
+                    .img-container {
+                        width: 50px;
+                        height: 50px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-right: 10px;
+                        img {
+                            max-width: 100%;
+                            max-height: 100%;
+                        }
+                    }
+
+                    .item-info {
+                        width: 85%;
+                        min-width:180px;
+                        h3,
+                        h4,
+                        h5 {
+                            margin: 0;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                        }
+
+                        h3 {
+                            font-size: 20px;
+                        }
+
+                        h4 {
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+            .forms{
+                display: flex;
+                flex-wrap: wrap;
+                margin-top:20px;
+                gap: 20px;
+                input{
+                    padding: 10px;
+                    border:1px solid $border-color;
+                    border-radius: 5px;
+                    outline: none;
+                    width: 200px;
+                    &:focus{
+                        border-color: $light-main2;
+                    }
+                }
+                .address-form{
+                    border:1px solid $border-color;
+                    padding: 20px;
+                    text-align: center;
+                    width: 233px;
+                    .form-group{
+                        margin-bottom:20px;
+                        
+                        .is-invalid{
+                            border-color: $main1;
+                        }
+                        .text-danger{
+                            color: $main1;
+                            font-size: 12px;
+                            margin-top: 5px;
+                        }
+                    }
+                    
+                }
+                button{
+                    color:$white;
+                    background-color: $main3;
+                    margin-right:10px;
+                    &:disabled{
+                        background-color: $light-main3;
+                    }
+                }
+                .card-form{
+                    width: 233px;
+                    padding: 20px;
+                    height: 400px;
+                    text-align: center;
+                    border:1px solid $border-color;
+                    .form-group{
+                        margin-bottom:20px;
+                        
+                        .is-invalid{
+                            border-color: $main1;
+                        }
+                        .text-danger{
+                            color: $main1;
+                            font-size: 12px;
+                            margin-top: 5px;
+                        }
+                    }
+
+                }
+            }
+        }
+        .submit{
+            width: 233px;
+            border: 1px solid $border-color;
+            height: 200px;
+            padding: 20px;
+            text-align: center;
+            
+            .flex{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .terms{
+                font-size: 13px;
+                span{
+                    color: $main2;
+                    cursor: pointer;
+                }
+            }
+            button{
+                background-color: $main3;
+                color: $white;
+                &:active{
+                    background-color: $light-main3;
+                }
+                &:disabled{
+                    background-color: $light-main3;
+                }
+            }
+        }
+    }
+}
