@@ -74,7 +74,14 @@ export class SingleProductComponent implements OnInit {
     this.cartService.addToCart(product);
   }
   buyNow(product: Product) {
-   
+    let cartItem={
+      id:product.id,
+      item:product,
+      quantity:1
+    }
+    this.router.navigate(['/checkout'], {
+      queryParams: { objectData: JSON.stringify(cartItem) },
+    });
   }
   
 }

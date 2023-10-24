@@ -8,49 +8,70 @@
       "phone": "+995123123123",
       "cart": [
         {
-          "id": 13,
+          "id": 11,
           "item": {
-            "id": 13,
-            "title": "Fog Scent Xpressio Perfume",
-            "description": "Product details of Best Fog Scent Xpressio Perfume 100ml For Men cool long lasting perfumes for Men",
+            "id": 11,
+            "title": "perfume Oil",
+            "description": "Mega Discount, Impression of Acqua Di Gio by GiorgioArmani concentrated attar perfume Oil",
             "price": 13,
-            "discountPercentage": 8.14,
-            "rating": 4.59,
-            "stock": 61,
-            "brand": "Fog Scent Xpressio",
+            "discountPercentage": 8.4,
+            "rating": 4.26,
+            "stock": 65,
+            "brand": "Impression of Acqua Di Gio",
             "category": "fragrances",
-            "thumbnail": "https://i.dummyjson.com/data/products/13/thumbnail.webp",
+            "thumbnail": "https://i.dummyjson.com/data/products/11/thumbnail.jpg",
             "images": [
-              "https://i.dummyjson.com/data/products/13/1.jpg",
-              "https://i.dummyjson.com/data/products/13/2.png",
-              "https://i.dummyjson.com/data/products/13/3.jpg",
-              "https://i.dummyjson.com/data/products/13/4.jpg",
-              "https://i.dummyjson.com/data/products/13/thumbnail.webp"
-            ]
-          },
-          "quantity": 5
-        },
-        {
-          "id": 17,
-          "item": {
-            "id": 17,
-            "title": "Tree Oil 30ml",
-            "description": "Tea tree oil contains a number of compounds, including terpinen-4-ol, that have been shown to kill certain bacteria,",
-            "price": 12,
-            "discountPercentage": 4.09,
-            "rating": 4.52,
-            "stock": 78,
-            "brand": "Hemani Tea",
-            "category": "skincare",
-            "thumbnail": "https://i.dummyjson.com/data/products/17/thumbnail.jpg",
-            "images": [
-              "https://i.dummyjson.com/data/products/17/1.jpg",
-              "https://i.dummyjson.com/data/products/17/2.jpg",
-              "https://i.dummyjson.com/data/products/17/3.jpg",
-              "https://i.dummyjson.com/data/products/17/thumbnail.jpg"
+              "https://i.dummyjson.com/data/products/11/1.jpg",
+              "https://i.dummyjson.com/data/products/11/2.jpg",
+              "https://i.dummyjson.com/data/products/11/3.jpg",
+              "https://i.dummyjson.com/data/products/11/thumbnail.jpg"
             ]
           },
           "quantity": 3
+        },
+        {
+          "id": 5,
+          "item": {
+            "id": 5,
+            "title": "Huawei P30",
+            "description": "Huawei’s re-badged P30 Pro New Edition was officially unveiled yesterday in Germany and now the device has made its way to the UK.",
+            "price": 499,
+            "discountPercentage": 10.58,
+            "rating": 4.09,
+            "stock": 32,
+            "brand": "Huawei",
+            "category": "smartphones",
+            "thumbnail": "https://i.dummyjson.com/data/products/5/thumbnail.jpg",
+            "images": [
+              "https://i.dummyjson.com/data/products/5/1.jpg",
+              "https://i.dummyjson.com/data/products/5/2.jpg",
+              "https://i.dummyjson.com/data/products/5/3.jpg"
+            ]
+          },
+          "quantity": 4
+        },
+        {
+          "id": 24,
+          "item": {
+            "id": 24,
+            "title": "cereals muesli fruit nuts",
+            "description": "original fauji cereal muesli 250gm box pack original fauji cereals muesli fruit nuts flakes breakfast cereal break fast faujicereals cerels cerel foji fouji",
+            "price": 46,
+            "discountPercentage": 16.8,
+            "rating": 4.94,
+            "stock": 113,
+            "brand": "fauji",
+            "category": "groceries",
+            "thumbnail": "https://i.dummyjson.com/data/products/24/thumbnail.jpg",
+            "images": [
+              "https://i.dummyjson.com/data/products/24/1.jpg",
+              "https://i.dummyjson.com/data/products/24/2.jpg",
+              "https://i.dummyjson.com/data/products/24/3.jpg",
+              "https://i.dummyjson.com/data/products/24/4.jpg",
+              "https://i.dummyjson.com/data/products/24/thumbnail.jpg"
+            ]
+          },
+          "quantity": 5
         }
       ],
       "purchased": [
@@ -366,6 +387,92 @@
             ]
           },
           "quantity": 1
+        },
+        {
+          "id": 4,
+          "item": {
+            "id": 4,
+            "title": "OPPOF19",
+            "description": "OPPO F19 is officially announced on April 2021.",
+            "price": 280,
+            "discountPercentage": 17.91,
+            "rating": 4.3,
+            "stock": 123,
+            "brand": "OPPO",
+            "category": "smartphones",
+            "thumbnail": "https://i.dummyjson.com/data/products/4/thumbnail.jpg",
+            "images": [
+              "https://i.dummyjson.com/data/products/4/1.jpg",
+              "https://i.dummyjson.com/data/products/4/2.jpg",
+              "https://i.dummyjson.com/data/products/4/3.jpg",
+              "https://i.dummyjson.com/data/products/4/4.jpg",
+              "https://i.dummyjson.com/data/products/4/thumbnail.jpg"
+            ]
+          },
+          "quantity": 1
+        },
+        {
+          "id": 78,
+          "item": {
+            "id": 78,
+            "title": "Rhinestone Korean Style Open Rings",
+            "description": "Fashion Jewellery 3Pcs Adjustable Pearl Rhinestone Korean Style Open Rings For Women",
+            "price": 30,
+            "discountPercentage": 8.02,
+            "rating": 4.69,
+            "stock": 9,
+            "brand": "Fashion Jewellery",
+            "category": "womens-jewellery",
+            "thumbnail": "https://i.dummyjson.com/data/products/78/thumbnail.jpg",
+            "images": [
+              "https://i.dummyjson.com/data/products/78/thumbnail.jpg"
+            ]
+          },
+          "quantity": 1
+        },
+        {
+          "id": 6,
+          "item": {
+            "id": 6,
+            "title": "MacBook Pro",
+            "description": "MacBook Pro 2021 with mini-LED display may launch between September, November",
+            "price": 1749,
+            "discountPercentage": 11.02,
+            "rating": 4.57,
+            "stock": 83,
+            "brand": "Apple",
+            "category": "laptops",
+            "thumbnail": "https://i.dummyjson.com/data/products/6/thumbnail.png",
+            "images": [
+              "https://i.dummyjson.com/data/products/6/1.png",
+              "https://i.dummyjson.com/data/products/6/2.jpg",
+              "https://i.dummyjson.com/data/products/6/3.png",
+              "https://i.dummyjson.com/data/products/6/4.jpg"
+            ]
+          },
+          "quantity": 3
+        },
+        {
+          "id": 75,
+          "item": {
+            "id": 75,
+            "title": "Seven Pocket Women Bag",
+            "description": "Seven Pocket Women Bag Handbags Lady Shoulder Crossbody Bag Female Purse Seven Pocket Bag",
+            "price": 68,
+            "discountPercentage": 14.87,
+            "rating": 4.93,
+            "stock": 13,
+            "brand": "Steal Frame",
+            "category": "womens-bags",
+            "thumbnail": "https://i.dummyjson.com/data/products/75/thumbnail.jpg",
+            "images": [
+              "https://i.dummyjson.com/data/products/75/1.jpg",
+              "https://i.dummyjson.com/data/products/75/2.jpg",
+              "https://i.dummyjson.com/data/products/75/3.jpg",
+              "https://i.dummyjson.com/data/products/75/thumbnail.jpg"
+            ]
+          },
+          "quantity": 4
         }
       ],
       "id": 1,
@@ -379,46 +486,46 @@
       "phone": "+995345345345",
       "cart": [
         {
-          "id": 10,
+          "id": 8,
           "item": {
-            "id": 10,
-            "title": "HP Pavilion 15-DK1056WM",
-            "description": "HP Pavilion 15-DK1056WM Gaming Laptop 10th Gen Core i5, 8GB, 256GB SSD, GTX 1650 4GB, Windows 10",
-            "price": 1099,
-            "discountPercentage": 6.18,
+            "id": 8,
+            "title": "Microsoft Surface Laptop 4",
+            "description": "Style and speed. Stand out on HD video calls backed by Studio Mics. Capture ideas on the vibrant touchscreen.",
+            "price": 1499,
+            "discountPercentage": 10.23,
             "rating": 4.43,
-            "stock": 89,
-            "brand": "HP Pavilion",
+            "stock": 68,
+            "brand": "Microsoft Surface",
             "category": "laptops",
-            "thumbnail": "https://i.dummyjson.com/data/products/10/thumbnail.jpeg",
+            "thumbnail": "https://i.dummyjson.com/data/products/8/thumbnail.jpg",
             "images": [
-              "https://i.dummyjson.com/data/products/10/1.jpg",
-              "https://i.dummyjson.com/data/products/10/2.jpg",
-              "https://i.dummyjson.com/data/products/10/3.jpg",
-              "https://i.dummyjson.com/data/products/10/thumbnail.jpeg"
+              "https://i.dummyjson.com/data/products/8/1.jpg",
+              "https://i.dummyjson.com/data/products/8/2.jpg",
+              "https://i.dummyjson.com/data/products/8/3.jpg",
+              "https://i.dummyjson.com/data/products/8/4.jpg",
+              "https://i.dummyjson.com/data/products/8/thumbnail.jpg"
             ]
           },
-          "quantity": 4
+          "quantity": 6
         },
         {
-          "id": 18,
+          "id": 11,
           "item": {
-            "id": 18,
-            "title": "Oil Free Moisturizer 100ml",
-            "description": "Dermive Oil Free Moisturizer with SPF 20 is specifically formulated with ceramides, hyaluronic acid & sunscreen.",
-            "price": 40,
-            "discountPercentage": 13.1,
-            "rating": 4.56,
-            "stock": 88,
-            "brand": "Dermive",
-            "category": "skincare",
-            "thumbnail": "https://i.dummyjson.com/data/products/18/thumbnail.jpg",
+            "id": 11,
+            "title": "perfume Oil",
+            "description": "Mega Discount, Impression of Acqua Di Gio by GiorgioArmani concentrated attar perfume Oil",
+            "price": 13,
+            "discountPercentage": 8.4,
+            "rating": 4.26,
+            "stock": 65,
+            "brand": "Impression of Acqua Di Gio",
+            "category": "fragrances",
+            "thumbnail": "https://i.dummyjson.com/data/products/11/thumbnail.jpg",
             "images": [
-              "https://i.dummyjson.com/data/products/18/1.jpg",
-              "https://i.dummyjson.com/data/products/18/2.jpg",
-              "https://i.dummyjson.com/data/products/18/3.jpg",
-              "https://i.dummyjson.com/data/products/18/4.jpg",
-              "https://i.dummyjson.com/data/products/18/thumbnail.jpg"
+              "https://i.dummyjson.com/data/products/11/1.jpg",
+              "https://i.dummyjson.com/data/products/11/2.jpg",
+              "https://i.dummyjson.com/data/products/11/3.jpg",
+              "https://i.dummyjson.com/data/products/11/thumbnail.jpg"
             ]
           },
           "quantity": 4
@@ -473,16 +580,6 @@
       ],
       "id": 2,
       "authorized": true
-    },
-    {
-      "firstname": "giiigig",
-      "lastname": "aiosdj",
-      "email": "13@gmail.com",
-      "password": "123123123",
-      "phone": "+995123123120",
-      "cart": [],
-      "purchased": [],
-      "id": 3
     }
   ]
 }

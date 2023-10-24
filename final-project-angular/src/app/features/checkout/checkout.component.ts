@@ -6,7 +6,7 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-checkout',
@@ -22,7 +22,7 @@ import { Router, RouterLink } from '@angular/router';
   styleUrls: ['./checkout.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CheckoutComponent {
+export class CheckoutComponent{
   products: CartItem[] = [];
   total = 2342;
   itemNum = 5;
@@ -31,13 +31,25 @@ export class CheckoutComponent {
     private cartService: CartService,
     private auth: AuthService,
     private fb: FormBuilder,
-    private router:Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {
+    this.route.queryParams.subscribe((params) => {
+      if (params['objectData']) {
+        this.objectData = JSON.parse(params['objectData']);
+      }
+    });
     this.cartService.products$.subscribe({
       next: (products) => {
-        this.products = products;
-        this.total = this.cartService.getTotal(products);
-        this.itemNum = this.cartService.getQuantity(products);
+        if(this.objectData){
+          this.products=[this.objectData]
+          this.total=this.objectData.item.price
+          this.itemNum=this.objectData.quantity
+        }else{
+          this.products = products;
+          this.total = this.cartService.getTotal(products);
+          this.itemNum = this.cartService.getQuantity(products);
+        }
       },
       error: (err) => { console.log(err) }
     });
@@ -46,7 +58,7 @@ export class CheckoutComponent {
   user = this.auth.loggedUser;
 
   addressForm = this.fb.group({
-    fullName: [this.user?.firstname+' '+this.user?.lastname, [Validators.required, Validators.pattern(/^[a-zA-Z\s]+$/)]],
+    fullName: [this.user?.firstname + ' ' + this.user?.lastname, [Validators.required, Validators.pattern(/^[a-zA-Z\s]+$/)]],
     country: [{ value: 'Georgia', disabled: true }],
     addr1: ['Tavisufleba st 25', [Validators.required, Validators.pattern(/^[a-zA-Z0-9\s]*$/)]],
     addr2: ['', [Validators.pattern(/^[a-zA-Z0-9\s]*$/)]],
@@ -130,10 +142,12 @@ export class CheckoutComponent {
     }
   }
   onCheckout() {
-    if(this.user?.purchased){
+    if (this.user?.purchased) {
       this.user?.purchased.push(...this.products);
     }
-    this.cartService.clearCart();
+    if(!this.objectData){
+      this.cartService.clearCart();
+    }
     this.cardSwitch = false;
     this.cardForm.enable();
     this.addressSwitch = false;
@@ -141,6 +155,7 @@ export class CheckoutComponent {
     this.cardForm.reset();
     this.addressForm.reset();
     alert('Your order has been placed successfully!');
-    this.router.navigate(['/']);  
+    this.router.navigate(['/']);
   }
+  objectData: CartItem | undefined;
 }

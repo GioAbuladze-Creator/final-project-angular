@@ -148,7 +148,7 @@
                 <p class="terms">By placing your order, you agree to our <br><span>User Agreement</span> and <span>Privacy
                         Notice</span></p>
             </div>
-            <button mat-button [disabled]="!addressSwitch || !cardSwitch" (click)="onCheckout()">Confirm and pay</button>
+            <button mat-button [disabled]="!addressSwitch || !cardSwitch || itemNum==0" (click)="onCheckout()">Confirm and pay</button>
         </div>
     </div>
 </section>
