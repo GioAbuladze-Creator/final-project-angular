@@ -68,6 +68,9 @@ export class MainProductsComponent implements OnInit, OnDestroy {
       if (this.route.snapshot.url[0].path == 'deals') {
         this.products$ = this.apiService.fetchProducts()
         this.discount = true;
+        if(this.route.snapshot.queryParams['category'] || this.route.snapshot.queryParams['search']){
+          this.router.navigate(['/error']);
+        }
       }
     }
 

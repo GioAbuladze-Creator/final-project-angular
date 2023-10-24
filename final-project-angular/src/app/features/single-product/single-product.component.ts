@@ -73,5 +73,8 @@ export class SingleProductComponent implements OnInit {
     }
     this.cartService.addToCart(product);
   }
+  buyNow(product: Product) {
+   
+  }
   
 }
