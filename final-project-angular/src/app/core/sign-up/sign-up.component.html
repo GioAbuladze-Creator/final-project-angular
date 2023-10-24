@@ -1,5 +1,5 @@
 <div class="container-fluid" [formGroup]="form" (submit)="onSubmit()">
-    <h2>Become Ubnisi Member</h2>
+    <h2>{{status}}</h2>
     <form>
         <div class="names">
             <div class="form-group">
@@ -76,6 +76,6 @@
                     class="form-check-label">agreement</a></label>
         </div>
 
-        <button mat-button class="btn btn-primary" [disabled]="isDisabled()" type="submit">Sign Up</button>
+        <button mat-button class="btn btn-primary" [disabled]="isDisabled()" type="submit">Done</button>
     </form>
 </div>
