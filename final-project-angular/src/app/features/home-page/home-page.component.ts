@@ -6,6 +6,8 @@ import { QuoteBarComponent } from 'src/app/core/quote-bar/quote-bar.component';
 import { TopBarComponent } from 'src/app/core/top-bar/top-bar.component';
 import { RouterLink } from '@angular/router';
 import { state, style, trigger } from '@angular/animations';
+import { Product } from 'src/app/shared/interfaces/product';
+import { ApiService } from 'src/app/shared/services/api.service';
 
 @Component({
   selector: 'app-home-page',
@@ -47,23 +49,44 @@ export class HomePageComponent {
   ];
 
   state = 'void';
-  public animateOnScroll = false;
+  trending='void';
+  discounted='void';
   @HostListener('window:scroll', [])
   onWindowScroll() {
     const scrollY = window.scrollY;
-    const scrollTriggerPosition = 210;
-
-    this.animateOnScroll = scrollY > scrollTriggerPosition;
-
-    if (this.animateOnScroll) {
+    const triggerForCategories = 500;
+    const triggerForTrending = 210;
+    const triggerForDiscounted = 1570;
+    
+    if (scrollY > triggerForCategories) {
       this.state = 'normal';
     } else {
       this.state = 'void';
     }
+
+    if (scrollY > triggerForTrending) {
+      this.trending = 'normal';
+    } else {
+      this.trending = 'void';
+    }
+
+    if (scrollY > triggerForDiscounted) {
+      this.discounted = 'normal';
+    } else {
+      this.discounted = 'void';
+    }
   }
 
-
-  constructor() {
-
+  trendingProducts:Product[] = []
+  discountedProducts:Product[] = []
+  constructor(
+    private apiService: ApiService
+  ) {
+    this.apiService.fetchProducts(75).subscribe((products) => {
+      this.trendingProducts = products.slice(50, 75);
+    })
+    this.apiService.fetchProducts().subscribe((products) => {
+      this.discountedProducts = products;
+    })
   }
 }

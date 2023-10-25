@@ -72,6 +72,27 @@
             ]
           },
           "quantity": 5
+        },
+        {
+          "id": 70,
+          "item": {
+            "id": 70,
+            "title": "Stainless Steel Women",
+            "description": "Fashion Skmei 1830 Shell Dial Stainless Steel Women Wrist Watch Lady Bracelet Watch Quartz Watches Ladies",
+            "price": 35,
+            "discountPercentage": 8.98,
+            "rating": 4.08,
+            "stock": 111,
+            "brand": "Bracelet",
+            "category": "womens-watches",
+            "thumbnail": "https://i.dummyjson.com/data/products/70/thumbnail.jpg",
+            "images": [
+              "https://i.dummyjson.com/data/products/70/1.jpg",
+              "https://i.dummyjson.com/data/products/70/2.jpg",
+              "https://i.dummyjson.com/data/products/70/thumbnail.jpg"
+            ]
+          },
+          "quantity": 1
         }
       ],
       "purchased": [

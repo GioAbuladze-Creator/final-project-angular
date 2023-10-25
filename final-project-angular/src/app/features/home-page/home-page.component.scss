@@ -67,7 +67,7 @@
     h2 {
         padding-left: 7%;
         margin-bottom: 40px;
-        font-size:30px;
+        font-size: 30px;
     }
 
     .category-wrapper {
@@ -84,11 +84,12 @@
             height: 400px;
             padding: 10px 20px;
             border: 1px solid $main2;
-            transform: translateY(100%)
-            h3{
+
+            transform: translateY(100%) h3 {
                 font-weight: 600;
                 font-size: 22px;
             }
+
             >div:hover {
                 color: $light-main3;
             }
@@ -114,7 +115,7 @@
 
                 h3 {
                     margin: 0;
-                    font-size:10px;
+                    font-size: 10px;
                 }
 
                 .img-wrapper {
@@ -127,4 +128,67 @@
             }
         }
     }
+}
+
+.trending-products,.discounted-products{
+    margin:100px auto;
+    padding:0 40px;
+    h2 {
+        padding-left: 7%;
+        margin-bottom: 40px;
+        font-size: 30px;
+    }
+    .wrapper{
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+        gap: 5px;
+        height: 150px;
+        white-space: nowrap;
+        padding-bottom:5px;
+        .product{
+            height: 100%;
+            flex: 0 0 100px;
+            cursor: pointer;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+.discounted-products{
+    .wrapper{
+        height: 200px;
+        gap:10px;
+        .product{
+            flex:0 0 150px;
+            position: relative;
+            span{
+                position: absolute;
+                z-index: 100;
+                top: 10px;
+                left: 10px;
+                padding: 5px 10px;
+                background-color: $main1;
+                color: $white;
+            }
+
+        }
+    }
+}
+
+::-webkit-scrollbar {
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $main2;
+    border-radius: 10px;
 }

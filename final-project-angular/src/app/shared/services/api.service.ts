@@ -14,8 +14,8 @@ export class ApiService {
   get url() {
     return 'https://dummyjson.com/products';
   }
-  fetchProducts() {
-    return this.http.get<Response>(`${this.url}?limit=24`).pipe(
+  fetchProducts(limit=24) {
+    return this.http.get<Response>(`${this.url}?limit=${limit}`).pipe(
       map(data => data.products)
     );
   }

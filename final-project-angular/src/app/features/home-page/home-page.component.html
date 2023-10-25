@@ -21,6 +21,17 @@
     </div>
 
 </section> 
+
+<section class="trending-products">
+    <h2>Trending Products</h2>
+    <div class="wrapper">
+        <div class="product" *ngFor="let product of trendingProducts" 
+            [@fadeInUp]="trending" [routerLink]="['/product',product.id]">
+            <img [src]="product.thumbnail" alt="product.title">
+        </div>
+    </div>
+</section>
+
 <section class="category-container">
     <h2>Popular Categories</h2>
     <div class="category-wrapper">
@@ -34,5 +45,16 @@
             </div>
         </div>
     </div>
+</section>
 
+
+<section class="discounted-products">
+    <h2>Discounted Products</h2>
+    <div class="wrapper">
+        <div class="product" *ngFor="let product of discountedProducts" 
+            [@fadeInUp]="discounted" [routerLink]="['/product',product.id]">
+            <img [src]="product.thumbnail" alt="product.title">
+            <span>-{{product.discountPercentage}}%</span>
+        </div>
+    </div>
 </section>
