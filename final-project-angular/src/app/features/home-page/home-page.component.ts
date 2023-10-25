@@ -15,12 +15,22 @@ import { RouterLink } from '@angular/router';
     CategoryBarComponent,
     QuoteBarComponent,
     RouterLink,
-    
+
   ],
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomePageComponent {
-
+  categoryLinks = [
+    {category:'smartphones',img:'https://i.dummyjson.com/data/products/2/1.jpg'},
+    {category:'laptops',img:'https://i.dummyjson.com/data/products/6/2.jpg'},
+    {category:'groceries',img:'https://i.dummyjson.com/data/products/21/2.jpg'},
+    {category:'womens-dresses',img:'https://i.dummyjson.com/data/products/43/1.jpg'},
+    {category:'mens-shirts',img:'https://i.dummyjson.com/data/products/51/3.jpg'},
+    {category:'sunglasses',img:'https://i.dummyjson.com/data/products/82/3.jpg'}
+  ];
+  constructor() {
+    
+  }
 }

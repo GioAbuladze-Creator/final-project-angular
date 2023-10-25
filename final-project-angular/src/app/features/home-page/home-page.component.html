@@ -4,11 +4,14 @@
 <section class="slider-container">
     <div class="slider-wrapper">
         <div class="slider">
-            <img src="../../../assets/smartphones.jpg" alt="smartphones" id="slide-1" [routerLink]="['/products']" [queryParams]="{category:'smartphones',discount:true}">
+            <img src="../../../assets/smartphones.jpg" alt="smartphones" id="slide-1" 
+                [routerLink]="['/products']" [queryParams]="{category:'smartphones',discount:true}">
 
-            <img src="../../../assets/watches.jpg" alt="smartphones" id="slide-2" [routerLink]="['/products']" [queryParams]="{category:'mens-watches',discount:true}">
+            <img src="../../../assets/watches.jpg" alt="smartphones" id="slide-2" 
+                [routerLink]="['/products']" [queryParams]="{category:'mens-watches',discount:true}">
 
-            <img src="../../../assets/women-fragrance.jpg" alt="smartphones" id="slide-3" [routerLink]="['/products']" [queryParams]="{category:'fragrances'}">
+            <img src="../../../assets/women-fragrance.jpg" alt="smartphones" id="slide-3" 
+                [routerLink]="['/products']" [queryParams]="{category:'fragrances'}">
         </div>
         <div class="slider-nav">
             <a href="#slide-1"></a>
@@ -18,3 +21,18 @@
     </div>
 
 </section> 
+<section class="category-container">
+    <h2>Popular Categories</h2>
+    <div class="category-wrapper">
+        <div class="category" *ngFor="let category of categoryLinks">
+            <h3>{{category.category}}</h3>
+            <div [routerLink]="['/products']" [queryParams]="{category:category.category}">
+                <div class="img-wrapper">
+                    <img [src]="category.img" alt="{{category.category}}">
+                </div>
+                <p>Shop Now</p>
+            </div>
+        </div>
+    </div>
+
+</section>
