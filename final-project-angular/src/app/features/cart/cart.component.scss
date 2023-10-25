@@ -10,6 +10,8 @@ section {
         width: 75%;
         min-width: 300px;
         padding: 20px;
+        background-color: $white;
+
         border: 1px solid $border-color;
         display: block;
         border-radius: 5px;
@@ -74,6 +76,9 @@ section {
                         top: 0;
                         right: 0;
                         height: 25px;
+                        &:hover {
+                            background-color: $light-main2;
+                        }
                     }
                 }
 
@@ -89,8 +94,9 @@ section {
 
     .options {
         width: 250px;
-
+        
         .total {
+            background-color: $white;
             height: 100px;
             border: 1px solid $border-color;
             border-radius: 5px;
@@ -104,15 +110,19 @@ section {
                 font-size: 13px;
                 width: 70%;
                 height: 30px;
+                &:hover {
+                    background-color: $light-main3;
+                }
             }
         }
 
         .purchase-history {
+            background-color: $white;
             border: 1px solid $border-color;
             border-radius: 5px;
             height: 600px;
             margin-top: 20px;
-            overflow-y: scroll;
+            overflow-y: auto;
             position: relative;
 
             >h3 {
@@ -126,6 +136,7 @@ section {
             }
 
             .product {
+                cursor: pointer;
                 .wrapper {
                     display: flex;
                     justify-content: flex-start;

@@ -32,7 +32,9 @@ section {
             
 
             .items {
+                background-color: $white;
                 border: 1px solid $border-color;
+                border-radius: 5px;
                 padding: 10px 20px;
 
                 .item {
@@ -90,7 +92,9 @@ section {
                     }
                 }
                 .address-form{
+                    background-color: $white;
                     border:1px solid $border-color;
+                    border-radius:5px;
                     padding: 20px;
                     text-align: center;
                     width: 233px;
@@ -121,7 +125,9 @@ section {
                     padding: 20px;
                     height: 400px;
                     text-align: center;
+                    background-color: $white;
                     border:1px solid $border-color;
+                    border-radius:5px;
                     .form-group{
                         margin-bottom:20px;
                         
@@ -140,7 +146,9 @@ section {
         }
         .submit{
             width: 233px;
+            background-color: $white;
             border: 1px solid $border-color;
+            border-radius:5px;
             height: 200px;
             padding: 20px;
             text-align: center;

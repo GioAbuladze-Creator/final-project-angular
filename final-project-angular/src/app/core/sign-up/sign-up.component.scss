@@ -48,6 +48,9 @@
             background-color: $light-main3;
             color:$white;
         }
+        &:hover{
+            background-color: $light-main3;
+        }
     }
     .text-danger{
         color: $main1;

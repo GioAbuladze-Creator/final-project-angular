@@ -93,6 +93,72 @@
             ]
           },
           "quantity": 1
+        },
+        {
+          "id": 7,
+          "item": {
+            "id": 7,
+            "title": "Samsung Galaxy Book",
+            "description": "Samsung Galaxy Book S (2020) Laptop With Intel Lakefield Chip, 8GB of RAM Launched",
+            "price": 1499,
+            "discountPercentage": 4.15,
+            "rating": 4.25,
+            "stock": 50,
+            "brand": "Samsung",
+            "category": "laptops",
+            "thumbnail": "https://i.dummyjson.com/data/products/7/thumbnail.jpg",
+            "images": [
+              "https://i.dummyjson.com/data/products/7/1.jpg",
+              "https://i.dummyjson.com/data/products/7/2.jpg",
+              "https://i.dummyjson.com/data/products/7/3.jpg",
+              "https://i.dummyjson.com/data/products/7/thumbnail.jpg"
+            ]
+          },
+          "quantity": 3
+        },
+        {
+          "id": 15,
+          "item": {
+            "id": 15,
+            "title": "Eau De Perfume Spray",
+            "description": "Genuine  Al-Rehab spray perfume from UAE/Saudi Arabia/Yemen High Quality",
+            "price": 30,
+            "discountPercentage": 10.99,
+            "rating": 4.7,
+            "stock": 105,
+            "brand": "Lord - Al-Rehab",
+            "category": "fragrances",
+            "thumbnail": "https://i.dummyjson.com/data/products/15/thumbnail.jpg",
+            "images": [
+              "https://i.dummyjson.com/data/products/15/1.jpg",
+              "https://i.dummyjson.com/data/products/15/2.jpg",
+              "https://i.dummyjson.com/data/products/15/3.jpg",
+              "https://i.dummyjson.com/data/products/15/4.jpg",
+              "https://i.dummyjson.com/data/products/15/thumbnail.jpg"
+            ]
+          },
+          "quantity": 3
+        },
+        {
+          "id": 22,
+          "item": {
+            "id": 22,
+            "title": "Elbow Macaroni - 400 gm",
+            "description": "Product details of Bake Parlor Big Elbow Macaroni - 400 gm",
+            "price": 14,
+            "discountPercentage": 15.58,
+            "rating": 4.57,
+            "stock": 146,
+            "brand": "Bake Parlor Big",
+            "category": "groceries",
+            "thumbnail": "https://i.dummyjson.com/data/products/22/thumbnail.jpg",
+            "images": [
+              "https://i.dummyjson.com/data/products/22/1.jpg",
+              "https://i.dummyjson.com/data/products/22/2.jpg",
+              "https://i.dummyjson.com/data/products/22/3.jpg"
+            ]
+          },
+          "quantity": 2
         }
       ],
       "purchased": [
@@ -500,8 +566,8 @@
       "authorized": true
     },
     {
-      "firstname": "giorgi",
-      "lastname": "abu",
+      "firstname": "Bet",
+      "lastname": "Meni",
       "email": "asd@gmail.com",
       "password": "asdasdasd",
       "phone": "+995345345345",

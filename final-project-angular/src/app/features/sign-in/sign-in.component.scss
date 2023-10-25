@@ -10,8 +10,10 @@
         cursor: pointer;
     }
     div{
+        background-color: $white;
         border: 1px solid $border-color;
         padding-bottom:20px;
+        border-radius: 5px;
     }
     form {
         padding: 20px 37px;
@@ -54,10 +56,16 @@
         background-color: $main2;
         color: $white;
         font-size: 12px;
+        &:hover {
+            background-color: $light-main2;
+        }
 
         &.sign-up {
             margin-top: -20px;
             background-color: $main3;
+            &:hover {
+                background-color: $light-main3;
+            }
         }
 
     }

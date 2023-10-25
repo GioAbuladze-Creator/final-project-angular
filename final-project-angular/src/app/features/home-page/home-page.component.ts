@@ -54,9 +54,10 @@ export class HomePageComponent {
   @HostListener('window:scroll', [])
   onWindowScroll() {
     const scrollY = window.scrollY;
-    const triggerForCategories = 500;
-    const triggerForTrending = 210;
-    const triggerForDiscounted = 1570;
+    const screenWidth = window.innerWidth;
+    let triggerForCategories = 500;
+    let triggerForTrending = 210;
+    let triggerForDiscounted = 1570;
     
     if (scrollY > triggerForCategories) {
       this.state = 'normal';
