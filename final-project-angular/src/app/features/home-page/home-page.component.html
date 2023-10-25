@@ -24,7 +24,7 @@
 <section class="category-container">
     <h2>Popular Categories</h2>
     <div class="category-wrapper">
-        <div class="category" *ngFor="let category of categoryLinks">
+        <div class="category" *ngFor="let category of categoryLinks" [@fadeInUp]="state">
             <h3>{{category.category}}</h3>
             <div [routerLink]="['/products']" [queryParams]="{category:category.category}">
                 <div class="img-wrapper">
