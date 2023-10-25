@@ -1,51 +1,59 @@
 <app-top-bar></app-top-bar>
 <app-category-bar></app-category-bar>
-<div class="product" *ngIf="product$ | async as product">
-    <div class="images">
-        <div class="main-image-container">
-            <img [src]="mainImage" alt="product_image" class="main-image">
-        </div>
-        <div class="img-container">
-            <img *ngFor="let image of product.images" [src]="image" alt="product_image" (click)="changeImage(image)">
-        </div>
-    </div>
-    <div class="description">
-        <h2>{{product.title}}</h2>
-        <div class="rating">
-            <p>
-                {{product.rating}}
-            </p>
-            <div>
-                <span *ngFor="let star of stars | keyvalue">
-                    <mat-icon *ngIf="star.value=='star'; else elseBlock" class="star">star</mat-icon>
-                    <ng-template #elseBlock>
-                        <mat-icon class="border">star</mat-icon>
-                    </ng-template>
-                </span>
+<ng-container *ngIf="(product$ | async) as product; else loading">
+    <div class="product">
+        <div class="images">
+            <div class="main-image-container">
+                <img [src]="mainImage" alt="product_image" class="main-image">
+            </div>
+            <div class="img-container">
+                <img *ngFor="let image of product.images" [src]="image" alt="product_image"
+                    (click)="changeImage(image)">
             </div>
         </div>
-        <mat-divider></mat-divider>
-        <p class="brand"><b>Brand: </b>{{product.brand}}</p>
-        <p class="price"><b>Price: </b>{{product.price|currency}}</p>
-        <p class="stock"><b>In Stock: </b>{{product.stock}}</p>
-        <p class="description-text">{{product.description}}</p>
-        <mat-divider></mat-divider>
-        <div>
-            <p><b>About this item: </b></p>
-            <ul class="about">
-                <li>Lorem ipsum dolor sit amet consectetur.</li>
-                <li>Lorem, ipsum.</li>
-                <li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
-                <li>lit. Nemo voluptatibus perspiciatis iusto magnis</li>
-                <li>elit. Animi eius omnis deleniti temporibus eos quia perferendis numquam esse asperiores! Incidunt?
-                </li>
-            </ul>
+        <div class="description">
+            <h2>{{product.title}}</h2>
+            <div class="rating">
+                <p>
+                    {{product.rating}}
+                </p>
+                <div>
+                    <span *ngFor="let star of stars | keyvalue">
+                        <mat-icon *ngIf="star.value=='star'; else elseBlock" class="star">star</mat-icon>
+                        <ng-template #elseBlock>
+                            <mat-icon class="border">star</mat-icon>
+                        </ng-template>
+                    </span>
+                </div>
+            </div>
+            <mat-divider></mat-divider>
+            <p class="brand"><b>Brand: </b>{{product.brand}}</p>
+            <p class="price"><b>Price: </b>{{product.price|currency}}</p>
+            <p class="stock"><b>In Stock: </b>{{product.stock}}</p>
+            <p class="description-text">{{product.description}}</p>
+            <mat-divider></mat-divider>
+            <div>
+                <p><b>About this item: </b></p>
+                <ul class="about">
+                    <li>Lorem ipsum dolor sit amet consectetur.</li>
+                    <li>Lorem, ipsum.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
+                    <li>lit. Nemo voluptatibus perspiciatis iusto magnis</li>
+                    <li>elit. Animi eius omnis deleniti temporibus eos quia perferendis numquam esse asperiores!
+                        Incidunt?
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="options">
+            <button mat-stroked-button class="add-to-cart" (click)="addToCart(product)">Add to Cart</button>
+            <mat-divider></mat-divider>
+            <button mat-stroked-button class="buy-now" (click)="buyNow(product)">Buy Now</button>
         </div>
     </div>
-    <div class="options">
-        <button mat-stroked-button class="add-to-cart" (click)="addToCart(product)">Add to Cart</button>
-        <mat-divider></mat-divider>
-        <button mat-stroked-button class="buy-now" (click)="buyNow(product)">Buy Now</button>
+</ng-container>
+<ng-template #loading>
+    <div class="loading">
+        <app-loading-roller></app-loading-roller>
     </div>
-
-</div>
+</ng-template>

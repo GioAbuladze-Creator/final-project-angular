@@ -49,7 +49,7 @@
 
 
 <section class="discounted-products">
-    <h2>Discounted Products</h2>
+    <h2 [routerLink]="['/deals']">Discounted Products</h2>
     <div class="wrapper">
         <div class="product" *ngFor="let product of discountedProducts" 
             [@fadeInUp]="discounted" [routerLink]="['/product',product.id]">

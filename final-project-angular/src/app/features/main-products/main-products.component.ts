@@ -9,6 +9,7 @@ import { Product } from 'src/app/shared/interfaces/product';
 import { ApiService } from 'src/app/shared/services/api.service';
 import { CategoryBarComponent } from 'src/app/core/category-bar/category-bar.component';
 import { QuoteBarComponent } from 'src/app/core/quote-bar/quote-bar.component';
+import { LoadingRollerComponent } from 'src/app/shared/components/loading-roller/loading-roller.component';
 
 @Component({
   selector: 'app-main-products',
@@ -19,7 +20,8 @@ import { QuoteBarComponent } from 'src/app/core/quote-bar/quote-bar.component';
     TopBarComponent,
     ProductItemComponent,
     CategoryBarComponent,
-    QuoteBarComponent
+    QuoteBarComponent,
+    LoadingRollerComponent
   ],
   templateUrl: './main-products.component.html',
   styleUrls: ['./main-products.component.scss']

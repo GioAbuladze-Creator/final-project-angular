@@ -14,6 +14,7 @@ import { CategoryBarComponent } from 'src/app/core/category-bar/category-bar.com
 import { CartService } from '../cart/cart.service';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
+import { LoadingRollerComponent } from 'src/app/shared/components/loading-roller/loading-roller.component';
 
 @Component({
   selector: 'app-single-product',
@@ -27,7 +28,8 @@ import { LocalStorageService } from 'src/app/shared/services/local-storage.servi
     MatDividerModule,
     MatIconModule,
     MatButtonModule,
-    CategoryBarComponent
+    CategoryBarComponent,
+    LoadingRollerComponent
   ],
   templateUrl: './single-product.component.html',
   styleUrls: ['./single-product.component.scss']
@@ -41,7 +43,7 @@ export class SingleProductComponent implements OnInit {
     private router: Router,
     private localstorage: LocalStorageService
   ) { }
-  product$!: Observable<Product>;
+  product$: Observable<Product>=new Observable<Product>();
   id!: string;
   stars: { [key: number]: string } = { 1: 'star_border', 2: 'star_border', 3: 'star_border', 4: 'star_border', 5: 'star_border' };
   mainImage: string = '';

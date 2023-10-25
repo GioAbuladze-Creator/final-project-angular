@@ -133,6 +133,8 @@
 .trending-products,.discounted-products{
     margin:100px auto;
     padding:0 40px;
+    min-width: 450px;
+
     h2 {
         padding-left: 7%;
         margin-bottom: 40px;
@@ -159,6 +161,12 @@
     }
 }
 .discounted-products{
+    h2{
+        cursor: pointer;
+        &:hover{
+            color: $main2;
+        }
+    }
     .wrapper{
         height: 200px;
         gap:10px;
