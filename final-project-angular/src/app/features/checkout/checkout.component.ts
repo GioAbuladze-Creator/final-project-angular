@@ -1,12 +1,13 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CartItem } from '../cart/cart-item.interface';
-import { CartService } from '../cart/cart.service';
-import { AuthService } from 'src/app/shared/services/auth.service';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+
+import { CartItem } from '../cart/cart-item.interface';
+import { CartService } from '../cart/cart.service';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-checkout',

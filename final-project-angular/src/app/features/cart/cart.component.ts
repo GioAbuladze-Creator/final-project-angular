@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { User } from 'src/app/shared/interfaces/user';
+import { listAnimation } from 'src/app/shared/animations/list-animation';
 
 @Component({
   selector: 'app-cart',
@@ -25,7 +26,10 @@ import { User } from 'src/app/shared/interfaces/user';
   ],
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  animations:[
+    listAnimation
+  ]
 })
 export class CartComponent {
   products: CartItem[] = [];

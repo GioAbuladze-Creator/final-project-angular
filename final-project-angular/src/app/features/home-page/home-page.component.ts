@@ -1,11 +1,10 @@
-import { ChangeDetectionStrategy, Component, HostListener } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 import { CategoryBarComponent } from 'src/app/core/category-bar/category-bar.component';
 import { QuoteBarComponent } from 'src/app/core/quote-bar/quote-bar.component';
 import { TopBarComponent } from 'src/app/core/top-bar/top-bar.component';
-import { RouterLink } from '@angular/router';
-import { state, style, trigger } from '@angular/animations';
 import { Product } from 'src/app/shared/interfaces/product';
 import { ApiService } from 'src/app/shared/services/api.service';
 
@@ -22,8 +21,7 @@ import { ApiService } from 'src/app/shared/services/api.service';
   ],
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  animations: []
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomePageComponent {
   categoryLinks = [

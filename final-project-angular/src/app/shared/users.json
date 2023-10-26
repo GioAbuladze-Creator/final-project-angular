@@ -8,154 +8,113 @@
       "phone": "+995123123123",
       "cart": [
         {
-          "id": 11,
+          "id": 6,
           "item": {
-            "id": 11,
-            "title": "perfume Oil",
-            "description": "Mega Discount, Impression of Acqua Di Gio by GiorgioArmani concentrated attar perfume Oil",
-            "price": 13,
-            "discountPercentage": 8.4,
-            "rating": 4.26,
-            "stock": 65,
-            "brand": "Impression of Acqua Di Gio",
-            "category": "fragrances",
-            "thumbnail": "https://i.dummyjson.com/data/products/11/thumbnail.jpg",
+            "id": 6,
+            "title": "MacBook Pro",
+            "description": "MacBook Pro 2021 with mini-LED display may launch between September, November",
+            "price": 1749,
+            "discountPercentage": 11.02,
+            "rating": 4.57,
+            "stock": 83,
+            "brand": "Apple",
+            "category": "laptops",
+            "thumbnail": "https://i.dummyjson.com/data/products/6/thumbnail.png",
             "images": [
-              "https://i.dummyjson.com/data/products/11/1.jpg",
-              "https://i.dummyjson.com/data/products/11/2.jpg",
-              "https://i.dummyjson.com/data/products/11/3.jpg",
-              "https://i.dummyjson.com/data/products/11/thumbnail.jpg"
+              "https://i.dummyjson.com/data/products/6/1.png",
+              "https://i.dummyjson.com/data/products/6/2.jpg",
+              "https://i.dummyjson.com/data/products/6/3.png",
+              "https://i.dummyjson.com/data/products/6/4.jpg"
             ]
           },
-          "quantity": 3
+          "quantity": 2
         },
         {
-          "id": 5,
+          "id": 18,
           "item": {
-            "id": 5,
-            "title": "Huawei P30",
-            "description": "Huawei’s re-badged P30 Pro New Edition was officially unveiled yesterday in Germany and now the device has made its way to the UK.",
-            "price": 499,
-            "discountPercentage": 10.58,
-            "rating": 4.09,
-            "stock": 32,
-            "brand": "Huawei",
-            "category": "smartphones",
-            "thumbnail": "https://i.dummyjson.com/data/products/5/thumbnail.jpg",
+            "id": 18,
+            "title": "Oil Free Moisturizer 100ml",
+            "description": "Dermive Oil Free Moisturizer with SPF 20 is specifically formulated with ceramides, hyaluronic acid & sunscreen.",
+            "price": 40,
+            "discountPercentage": 13.1,
+            "rating": 4.56,
+            "stock": 88,
+            "brand": "Dermive",
+            "category": "skincare",
+            "thumbnail": "https://i.dummyjson.com/data/products/18/thumbnail.jpg",
             "images": [
-              "https://i.dummyjson.com/data/products/5/1.jpg",
-              "https://i.dummyjson.com/data/products/5/2.jpg",
-              "https://i.dummyjson.com/data/products/5/3.jpg"
+              "https://i.dummyjson.com/data/products/18/1.jpg",
+              "https://i.dummyjson.com/data/products/18/2.jpg",
+              "https://i.dummyjson.com/data/products/18/3.jpg",
+              "https://i.dummyjson.com/data/products/18/4.jpg",
+              "https://i.dummyjson.com/data/products/18/thumbnail.jpg"
             ]
           },
           "quantity": 4
         },
         {
-          "id": 24,
+          "id": 12,
           "item": {
-            "id": 24,
-            "title": "cereals muesli fruit nuts",
-            "description": "original fauji cereal muesli 250gm box pack original fauji cereals muesli fruit nuts flakes breakfast cereal break fast faujicereals cerels cerel foji fouji",
-            "price": 46,
-            "discountPercentage": 16.8,
-            "rating": 4.94,
-            "stock": 113,
-            "brand": "fauji",
-            "category": "groceries",
-            "thumbnail": "https://i.dummyjson.com/data/products/24/thumbnail.jpg",
+            "id": 12,
+            "title": "Brown Perfume",
+            "description": "Royal_Mirage Sport Brown Perfume for Men & Women - 120ml",
+            "price": 40,
+            "discountPercentage": 15.66,
+            "rating": 4,
+            "stock": 52,
+            "brand": "Royal_Mirage",
+            "category": "fragrances",
+            "thumbnail": "https://i.dummyjson.com/data/products/12/thumbnail.jpg",
             "images": [
-              "https://i.dummyjson.com/data/products/24/1.jpg",
-              "https://i.dummyjson.com/data/products/24/2.jpg",
-              "https://i.dummyjson.com/data/products/24/3.jpg",
-              "https://i.dummyjson.com/data/products/24/4.jpg",
-              "https://i.dummyjson.com/data/products/24/thumbnail.jpg"
+              "https://i.dummyjson.com/data/products/12/1.jpg",
+              "https://i.dummyjson.com/data/products/12/2.jpg",
+              "https://i.dummyjson.com/data/products/12/3.png",
+              "https://i.dummyjson.com/data/products/12/4.jpg",
+              "https://i.dummyjson.com/data/products/12/thumbnail.jpg"
             ]
           },
-          "quantity": 5
+          "quantity": 3
         },
         {
-          "id": 70,
+          "id": 10,
           "item": {
-            "id": 70,
-            "title": "Stainless Steel Women",
-            "description": "Fashion Skmei 1830 Shell Dial Stainless Steel Women Wrist Watch Lady Bracelet Watch Quartz Watches Ladies",
-            "price": 35,
-            "discountPercentage": 8.98,
-            "rating": 4.08,
-            "stock": 111,
-            "brand": "Bracelet",
-            "category": "womens-watches",
-            "thumbnail": "https://i.dummyjson.com/data/products/70/thumbnail.jpg",
+            "id": 10,
+            "title": "HP Pavilion 15-DK1056WM",
+            "description": "HP Pavilion 15-DK1056WM Gaming Laptop 10th Gen Core i5, 8GB, 256GB SSD, GTX 1650 4GB, Windows 10",
+            "price": 1099,
+            "discountPercentage": 6.18,
+            "rating": 4.43,
+            "stock": 89,
+            "brand": "HP Pavilion",
+            "category": "laptops",
+            "thumbnail": "https://i.dummyjson.com/data/products/10/thumbnail.jpeg",
             "images": [
-              "https://i.dummyjson.com/data/products/70/1.jpg",
-              "https://i.dummyjson.com/data/products/70/2.jpg",
-              "https://i.dummyjson.com/data/products/70/thumbnail.jpg"
+              "https://i.dummyjson.com/data/products/10/1.jpg",
+              "https://i.dummyjson.com/data/products/10/2.jpg",
+              "https://i.dummyjson.com/data/products/10/3.jpg",
+              "https://i.dummyjson.com/data/products/10/thumbnail.jpeg"
             ]
           },
           "quantity": 1
         },
         {
-          "id": 7,
+          "id": 19,
           "item": {
-            "id": 7,
-            "title": "Samsung Galaxy Book",
-            "description": "Samsung Galaxy Book S (2020) Laptop With Intel Lakefield Chip, 8GB of RAM Launched",
-            "price": 1499,
-            "discountPercentage": 4.15,
-            "rating": 4.25,
-            "stock": 50,
-            "brand": "Samsung",
-            "category": "laptops",
-            "thumbnail": "https://i.dummyjson.com/data/products/7/thumbnail.jpg",
+            "id": 19,
+            "title": "Skin Beauty Serum.",
+            "description": "Product name: rorec collagen hyaluronic acid white face serum riceNet weight: 15 m",
+            "price": 46,
+            "discountPercentage": 10.68,
+            "rating": 4.42,
+            "stock": 54,
+            "brand": "ROREC White Rice",
+            "category": "skincare",
+            "thumbnail": "https://i.dummyjson.com/data/products/19/thumbnail.jpg",
             "images": [
-              "https://i.dummyjson.com/data/products/7/1.jpg",
-              "https://i.dummyjson.com/data/products/7/2.jpg",
-              "https://i.dummyjson.com/data/products/7/3.jpg",
-              "https://i.dummyjson.com/data/products/7/thumbnail.jpg"
-            ]
-          },
-          "quantity": 3
-        },
-        {
-          "id": 15,
-          "item": {
-            "id": 15,
-            "title": "Eau De Perfume Spray",
-            "description": "Genuine  Al-Rehab spray perfume from UAE/Saudi Arabia/Yemen High Quality",
-            "price": 30,
-            "discountPercentage": 10.99,
-            "rating": 4.7,
-            "stock": 105,
-            "brand": "Lord - Al-Rehab",
-            "category": "fragrances",
-            "thumbnail": "https://i.dummyjson.com/data/products/15/thumbnail.jpg",
-            "images": [
-              "https://i.dummyjson.com/data/products/15/1.jpg",
-              "https://i.dummyjson.com/data/products/15/2.jpg",
-              "https://i.dummyjson.com/data/products/15/3.jpg",
-              "https://i.dummyjson.com/data/products/15/4.jpg",
-              "https://i.dummyjson.com/data/products/15/thumbnail.jpg"
-            ]
-          },
-          "quantity": 3
-        },
-        {
-          "id": 22,
-          "item": {
-            "id": 22,
-            "title": "Elbow Macaroni - 400 gm",
-            "description": "Product details of Bake Parlor Big Elbow Macaroni - 400 gm",
-            "price": 14,
-            "discountPercentage": 15.58,
-            "rating": 4.57,
-            "stock": 146,
-            "brand": "Bake Parlor Big",
-            "category": "groceries",
-            "thumbnail": "https://i.dummyjson.com/data/products/22/thumbnail.jpg",
-            "images": [
-              "https://i.dummyjson.com/data/products/22/1.jpg",
-              "https://i.dummyjson.com/data/products/22/2.jpg",
-              "https://i.dummyjson.com/data/products/22/3.jpg"
+              "https://i.dummyjson.com/data/products/19/1.jpg",
+              "https://i.dummyjson.com/data/products/19/2.jpg",
+              "https://i.dummyjson.com/data/products/19/3.png",
+              "https://i.dummyjson.com/data/products/19/thumbnail.jpg"
             ]
           },
           "quantity": 2
