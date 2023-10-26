@@ -1,72 +1,75 @@
 @import '../../shared/styles/palette';
 
-.container {
-    width: 300px;
-    height: 380px;
-    margin: 0 auto;
-    text-align: center;
-    padding-top: 100px;
-    img {
-        cursor: pointer;
-    }
-    div{
-        background-color: $white;
-        border: 1px solid $border-color;
-        padding-bottom:20px;
-        border-radius: 5px;
-    }
-    form {
-        padding: 20px 37px;
-        display: block;
-        border-radius: 7px;
-
-        h3 {
-            font-size: 20px;
-            font-weight: 500;
+section{
+    min-width: 520px;
+    .container {
+        width: 300px;
+        height: 380px;
+        margin: 0 auto;
+        text-align: center;
+        padding-top: 100px;
+        img {
+            cursor: pointer;
         }
-
-        .error-message {
-            color: $main1;
+        div{
+            background-color: $white;
+            border: 1px solid $border-color;
+            padding-bottom:20px;
+            border-radius: 5px;
         }
-
-        input {
-            width: 200px;
+        form {
+            padding: 20px 37px;
+            display: block;
+            border-radius: 7px;
+    
+            h3 {
+                font-size: 20px;
+                font-weight: 500;
+            }
+    
+            .error-message {
+                color: $main1;
+            }
+    
+            input {
+                width: 200px;
+                height: 30px;
+                margin: 10px auto;
+                border-radius: 5px;
+                border: 1px solid $border-color;
+                padding: 0 10px;
+    
+                &.is-invalid {
+                    border: 1px solid $main1;
+                }
+            }
+    
+    
+            p {
+                margin-top: 10px;
+                font-size: 12px;
+            }
+        }
+    
+        button {
+            width: 220px;
             height: 30px;
             margin: 10px auto;
-            border-radius: 5px;
-            border: 1px solid $border-color;
-            padding: 0 10px;
-
-            &.is-invalid {
-                border: 1px solid $main1;
-            }
-        }
-
-
-        p {
-            margin-top: 10px;
+            background-color: $main2;
+            color: $white;
             font-size: 12px;
-        }
-    }
-
-    button {
-        width: 220px;
-        height: 30px;
-        margin: 10px auto;
-        background-color: $main2;
-        color: $white;
-        font-size: 12px;
-        &:hover {
-            background-color: $light-main2;
-        }
-
-        &.sign-up {
-            margin-top: -20px;
-            background-color: $main3;
             &:hover {
-                background-color: $light-main3;
+                background-color: $light-main2;
             }
+    
+            &.sign-up {
+                margin-top: -20px;
+                background-color: $main3;
+                &:hover {
+                    background-color: $light-main3;
+                }
+            }
+    
         }
-
     }
 }

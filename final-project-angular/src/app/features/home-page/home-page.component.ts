@@ -23,20 +23,7 @@ import { ApiService } from 'src/app/shared/services/api.service';
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  animations: [
-    trigger('fadeInUp', [
-      state('normal', style({
-        opacity: 1,
-        transform: 'translateY(0)',
-        "transition-duration": '1s'
-      })),
-      state('void', style({
-        opacity: 0,
-        transform: 'translateY(200px)',
-        "transition-duration": '1s'
-      })),
-    ])
-  ]
+  animations: []
 })
 export class HomePageComponent {
   categoryLinks = [
@@ -47,37 +34,7 @@ export class HomePageComponent {
     { category: 'mens-shirts', img: 'https://i.dummyjson.com/data/products/51/3.jpg' },
     { category: 'sunglasses', img: 'https://i.dummyjson.com/data/products/82/3.jpg' }
   ];
-
-  state = 'void';
-  trending='void';
-  discounted='void';
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    const scrollY = window.scrollY;
-    const screenWidth = window.innerWidth;
-    let triggerForCategories = 500;
-    let triggerForTrending = 210;
-    let triggerForDiscounted = 1570;
-    
-    if (scrollY > triggerForCategories) {
-      this.state = 'normal';
-    } else {
-      this.state = 'void';
-    }
-
-    if (scrollY > triggerForTrending) {
-      this.trending = 'normal';
-    } else {
-      this.trending = 'void';
-    }
-
-    if (scrollY > triggerForDiscounted) {
-      this.discounted = 'normal';
-    } else {
-      this.discounted = 'void';
-    }
-  }
-
+ 
   trendingProducts:Product[] = []
   discountedProducts:Product[] = []
   constructor(

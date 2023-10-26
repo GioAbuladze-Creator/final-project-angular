@@ -4,14 +4,14 @@
 <section class="slider-container">
     <div class="slider-wrapper">
         <div class="slider">
-            <img src="../../../assets/smartphones.jpg" alt="smartphones" id="slide-1" 
-                [routerLink]="['/products']" [queryParams]="{category:'smartphones',discount:true}">
+            <img src="../../../assets/smartphones.jpg" alt="smartphones" id="slide-1" [routerLink]="['/products']"
+                [queryParams]="{category:'smartphones',discount:true}">
 
-            <img src="../../../assets/watches.jpg" alt="smartphones" id="slide-2" 
-                [routerLink]="['/products']" [queryParams]="{category:'mens-watches',discount:true}">
+            <img src="../../../assets/watches.jpg" alt="smartphones" id="slide-2" [routerLink]="['/products']"
+                [queryParams]="{category:'mens-watches',discount:true}">
 
-            <img src="../../../assets/women-fragrance.jpg" alt="smartphones" id="slide-3" 
-                [routerLink]="['/products']" [queryParams]="{category:'fragrances'}">
+            <img src="../../../assets/women-fragrance.jpg" alt="smartphones" id="slide-3" [routerLink]="['/products']"
+                [queryParams]="{category:'fragrances'}">
         </div>
         <div class="slider-nav">
             <a href="#slide-1"></a>
@@ -20,13 +20,12 @@
         </div>
     </div>
 
-</section> 
+</section>
 
 <section class="trending-products">
     <h2>Trending Products</h2>
     <div class="wrapper">
-        <div class="product" *ngFor="let product of trendingProducts" 
-            [@fadeInUp]="trending" [routerLink]="['/product',product.id]">
+        <div class="product" *ngFor="let product of trendingProducts" [routerLink]="['/product',product.id]">
             <img [src]="product.thumbnail" alt="product.title">
         </div>
     </div>
@@ -35,7 +34,7 @@
 <section class="category-container">
     <h2>Popular Categories</h2>
     <div class="category-wrapper">
-        <div class="category" *ngFor="let category of categoryLinks" [@fadeInUp]="state">
+        <div class="category" *ngFor="let category of categoryLinks">
             <h3>{{category.category}}</h3>
             <div [routerLink]="['/products']" [queryParams]="{category:category.category}">
                 <div class="img-wrapper">
@@ -51,8 +50,7 @@
 <section class="discounted-products">
     <h2 [routerLink]="['/deals']">Discounted Products</h2>
     <div class="wrapper">
-        <div class="product" *ngFor="let product of discountedProducts" 
-            [@fadeInUp]="discounted" [routerLink]="['/product',product.id]">
+        <div class="product" *ngFor="let product of discountedProducts" [routerLink]="['/product',product.id]">
             <img [src]="product.thumbnail" alt="product.title">
             <span>-{{product.discountPercentage}}%</span>
         </div>
