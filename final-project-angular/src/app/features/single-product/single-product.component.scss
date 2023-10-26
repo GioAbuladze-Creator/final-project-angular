@@ -1,12 +1,13 @@
 @import '../../shared/styles/palette';
 
 .product {
-    min-width: 480px;
+    min-width: 518px;
+    max-width: 1000px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
-    margin: 30px 10%;
+    margin: 30px auto;
     padding-top: 20px;
     border: 0.2px solid $border-color;
     background-color: $white;
