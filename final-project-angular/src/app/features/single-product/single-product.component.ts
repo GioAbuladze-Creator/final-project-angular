@@ -15,6 +15,7 @@ import { CartService } from '../cart/cart.service';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
 import { LoadingRollerComponent } from 'src/app/shared/components/loading-roller/loading-roller.component';
+import { QuoteBarComponent } from 'src/app/core/quote-bar/quote-bar.component';
 
 @Component({
   selector: 'app-single-product',
@@ -29,7 +30,8 @@ import { LoadingRollerComponent } from 'src/app/shared/components/loading-roller
     MatIconModule,
     MatButtonModule,
     CategoryBarComponent,
-    LoadingRollerComponent
+    LoadingRollerComponent,
+    QuoteBarComponent
   ],
   templateUrl: './single-product.component.html',
   styleUrls: ['./single-product.component.scss']

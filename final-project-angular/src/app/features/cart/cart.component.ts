@@ -1,16 +1,17 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatButtonModule } from '@angular/material/button';
+import { RouterLink } from '@angular/router';
 
 import { CartService } from './cart.service';
 import { TopBarComponent } from 'src/app/core/top-bar/top-bar.component';
 import { CategoryBarComponent } from 'src/app/core/category-bar/category-bar.component';
 import { CartItem } from './cart-item.interface';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatButtonModule } from '@angular/material/button';
-import { RouterLink } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { User } from 'src/app/shared/interfaces/user';
 import { listAnimation } from 'src/app/shared/animations/list-animation';
+import { QuoteBarComponent } from 'src/app/core/quote-bar/quote-bar.component';
 
 @Component({
   selector: 'app-cart',
@@ -21,7 +22,8 @@ import { listAnimation } from 'src/app/shared/animations/list-animation';
     CategoryBarComponent,
     MatDividerModule,
     MatButtonModule,
-    RouterLink
+    RouterLink,
+    QuoteBarComponent
 
   ],
   templateUrl: './cart.component.html',
