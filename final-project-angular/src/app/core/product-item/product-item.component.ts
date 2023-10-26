@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, Input, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
@@ -20,7 +20,7 @@ import { SalePipe } from 'src/app/shared/pipes/sale.pipe';
   templateUrl: './product-item.component.html',
   styleUrls: ['./product-item.component.scss']
 })
-export class ProductItemComponent implements OnInit{
+export class ProductItemComponent{
   @Input() discount=false;
   @Input() products:Product[]=[]
 
@@ -29,7 +29,5 @@ export class ProductItemComponent implements OnInit{
   }
   addToCart(product:Product){
     console.log(product)
-  }
-  ngOnInit(){
   }
 }

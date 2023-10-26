@@ -39,4 +39,7 @@ export class UsersService {
     updateUser(user: User) {
         return this.http.put<User>(`http://localhost:3000/users/${user.id}`, user)
     }
+    deleteUser(id: number) { 
+        return this.http.delete<User>(`http://localhost:3000/users/${id}`)
+    }
 }

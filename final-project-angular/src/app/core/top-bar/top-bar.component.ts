@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -36,7 +36,7 @@ import { LocalStorageService } from 'src/app/shared/services/local-storage.servi
   templateUrl: './top-bar.component.html',
   styleUrls: ['./top-bar.component.scss']
 })
-export class TopBarComponent implements OnInit {
+export class TopBarComponent {
   constructor(
     private apiService: ApiService,
     private fb: FormBuilder,
@@ -104,8 +104,4 @@ export class TopBarComponent implements OnInit {
       return cartsize
     })
   );
-  ngOnInit(): void {
-
-  }
-
 }

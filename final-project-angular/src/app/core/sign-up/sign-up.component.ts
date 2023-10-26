@@ -68,28 +68,16 @@ export class SignUpComponent {
     this.form.markAllAsTouched()
     if (this.form.valid) {
       if(this.auth.isAuthorized) {
-        let newUser={
-          ...this.auth.loggedUser!,
-          firstname: this.firstname?.value!,
-          lastname: this.lastname?.value!,
-          email: this.email?.value!,
-          password: this.password?.value!,
-          phone: this.phone?.value!,
-        }
-        this.usersService.updateUser(newUser).subscribe(
-          {
-            next: () => {
-              this.form.reset();
-              setTimeout(() => {
-                alert('You have successfully updated your profile');
-                this.form.markAsUntouched();
-                this.auth.loggedUser = newUser;
-                this.dialogRef.close();
-              })
-            },
-            error: () => alert('Something went wrong')
-          }
-        )
+        this.usersService.checkUser(this.email?.value!, this.phone?.value!).subscribe({
+          next: (user) => {
+            if (user && user.id !== this.auth.loggedUser?.id) {
+              alert('User already exists')
+            } else {
+              this.updateUser();
+            }
+          },
+          error: () => alert('Something went wrong')
+        })
       }else{
 
         this.usersService.findUser(this.email?.value!, this.password?.value!).subscribe(
@@ -140,5 +128,29 @@ export class SignUpComponent {
 
 
     }
+  }
+  updateUser() {
+    let newUser={
+      ...this.auth.loggedUser!,
+      firstname: this.firstname?.value!,
+      lastname: this.lastname?.value!,
+      email: this.email?.value!,
+      password: this.password?.value!,
+      phone: this.phone?.value!,
+    }
+    this.usersService.updateUser(newUser).subscribe(
+      {
+        next: () => {
+          this.form.reset();
+          setTimeout(() => {
+            alert('You have successfully updated your profile');
+            this.form.markAsUntouched();
+            this.auth.loggedUser = newUser;
+            this.dialogRef.close();
+          })
+        },
+        error: () => alert('Something went wrong')
+      }
+    )
   }
 }

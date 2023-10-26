@@ -1,0 +1,21 @@
+@import '../../shared/styles/palette';
+.content{
+    padding: 10px 0;
+    margin: 0 auto;
+    width: 200px;
+    display: block;
+    justify-content: center;
+    text-align: center;
+    
+    h2{
+        font-size: 25px;
+    }
+    button{
+        background-color: $main3;
+        color:$white;
+        width:50%;
+        &:hover {
+            background-color: $light-main3;
+        }
+    }
+}

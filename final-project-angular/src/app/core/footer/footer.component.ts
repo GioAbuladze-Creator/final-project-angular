@@ -1,8 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+
 import { SignUpComponent } from '../sign-up/sign-up.component';
 import { AuthService } from 'src/app/shared/services/auth.service';
+import { DeleteUserComponent } from '../delete-user/delete-user.component';
 
 @Component({
   selector: 'app-footer',
@@ -15,12 +17,21 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 export class FooterComponent {
   constructor(
     public dialog: MatDialog,
-    private auth: AuthService
+    private auth: AuthService,
   ) { }
   editUser(enterAnimationDuration: string, exitAnimationDuration: string) {
     if (this.auth.isAuthorized) {
       this.dialog.open(SignUpComponent, {
         width: '350px',
+        enterAnimationDuration,
+        exitAnimationDuration,
+      })
+    }
+  }
+  deleteUser(enterAnimationDuration: string, exitAnimationDuration: string){
+    if(this.auth.isAuthorized){
+      this.dialog.open(DeleteUserComponent,{
+        width: '200px',
         enterAnimationDuration,
         exitAnimationDuration,
       })

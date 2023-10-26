@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -26,7 +26,7 @@ import { LoadingRollerComponent } from 'src/app/shared/components/loading-roller
   templateUrl: './main-products.component.html',
   styleUrls: ['./main-products.component.scss']
 })
-export class MainProductsComponent implements OnInit, OnDestroy {
+export class MainProductsComponent implements OnInit{
   products$: Observable<Product[]> = new Observable<Product[]>();
   discount = false;
   constructor(
@@ -76,7 +76,5 @@ export class MainProductsComponent implements OnInit, OnDestroy {
       }
     }
 
-  }
-  ngOnDestroy(): void {
   }
 }
